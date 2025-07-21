@@ -1,0 +1,9 @@
+﻿Classe,Vida Máxima,Vigor,Dano,Chance de Crítico,Cadência,Velocidade de Recarga,Velocidade de Movimento,Tempo de Spawn,Regeneração Passiva,Inventário
+Demolidor,50,40,90,10,40,40,40,60,40,50
+Engenheiro,50,80,30,40,90,90,20,60,20,50
+Explorador,60,80,30,10,50,50,100,40,40,100
+Assassino,30,40,70,50,50,50,20,40,20,60
+Colosso,100,40,30,30,30,30,20,40,80,90
+Armeiro,60,50,80,90,50,50,20,50,20,70
+Corredor,30,100,30,50,50,50,20,50,20,50
+Imortal,80,50,50,30,50,50,20,20,80,60

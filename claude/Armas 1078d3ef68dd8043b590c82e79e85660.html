@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Armas</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1078d3ef-68dd-8043-b590-c82e79e85660" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🔴</span></div><h1 class="page-title">Armas</h1><p class="page-description"></p></header><div class="page-body"><h1 id="12d8d3ef-68dd-80a3-9733-ee34322da004" class=""><mark class="highlight-blue">Descrição</mark></h1><p id="12d8d3ef-68dd-80c5-aab7-d5d1a02c1bd3" class="">Existem duas principais categorias de armas, as primárias e as secundárias. Armas primárias são mais fortes e poderosas enquanto as secundárias ajudam o jogador em casos onde ele esta sem munição ou até mesmo para economiza-la.</p><h1 id="1378d3ef-68dd-8088-9b3d-de01b5e9f73e" class=""><mark class="highlight-blue">Armas</mark></h1><h2 id="12d8d3ef-68dd-809a-a125-fdba25f2d6a3" class=""><mark class="highlight-teal">Armas Primárias</mark></h2><ul id="12d8d3ef-68dd-8008-825c-f4a41e0f1443" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Pistola</strong></mark></summary><figure id="1388d3ef-68dd-8048-bd6b-f2256f6957b4" class="image"><a href="image%209.png"><img style="width:84px" src="image%209.png"/></a></figure><p id="1378d3ef-68dd-80ff-a98f-e0dc7e35d887" class="">Arma inicial com boa escalabilidade. Possui alta precisão e tempo de recarga rápido, sendo ideal para builds focadas em crítico devido à sua habilidade passiva.</p></details></li></ul><ul id="12d8d3ef-68dd-8024-b673-c1808a65d536" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Shotgun</strong></mark></summary><figure id="1388d3ef-68dd-80d4-81f1-f577d606e2d1" class="image"><a href="image%2010.png"><img style="width:72px" src="image%2010.png"/></a></figure><p id="12d8d3ef-68dd-8003-a5ca-eab749000823" class="">Arma de alto dano em curtas distâncias. Muito eficaz contra inimigos maiores, especialmente quando disparada na distância correta, permitindo atingir todos os alvos com um único tiro, ou focar todos as balas em um só alvo potencializando ainda mais o dano.</p></details></li></ul><ul id="12d8d3ef-68dd-80e3-b15b-f3dda89e209e" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Rifle de Assalto (AK-47)</strong></mark></summary><figure id="1388d3ef-68dd-800a-98b4-fe680d75ce92" class="image"><a href="image%2011.png"><img style="width:120px" src="image%2011.png"/></a></figure><p id="12d8d3ef-68dd-8051-b05d-e29ddaa5ac21" class="">Equilíbrio entre cadência de tiro, alcance e dano, sendo versátil para diversas situações. Ideal para controlar hordas médias de inimigos.</p></details></li></ul><ul id="12d8d3ef-68dd-80b6-97dc-f3d570390848" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Metralhadora Leve (SMG)</strong></mark></summary><figure id="1388d3ef-68dd-8090-9712-f96b6cfc9138" class="image"><a href="image%2012.png"><img style="width:84px" src="image%2012.png"/></a></figure><p id="12d8d3ef-68dd-80a8-9ee8-e0127bcf5b98" class="">Arma de alta cadência de tiro, porém com dano e controle reduzidos. Excelente para enfrentar enxames de zumbis mais fracos e numerosos, mas exige controle em distâncias maiores.</p></details></li></ul><ul id="12d8d3ef-68dd-80df-9085-f585bdde1b05" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Sniper</strong></mark></summary><figure id="1388d3ef-68dd-8043-bc74-e59994d6d922" class="image"><a href="image%2013.png"><img style="width:120px" src="image%2013.png"/></a></figure><p id="12d8d3ef-68dd-8051-a054-caea12b2583d" class="">Arma de longo alcance com alta precisão e dano elevado, eficaz contra alvos específicos e chefes. Sua recarga é mais lenta, mas o dano compensará.</p></details></li></ul><ul id="12d8d3ef-68dd-8059-b263-da524e19d50c" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Minigun</strong></mark></summary><figure id="1388d3ef-68dd-80c7-a6f3-d7c34e683f55" class="image"><a href="image%2014.png"><img style="width:132px" src="image%2014.png"/></a></figure><p id="12d8d3ef-68dd-8051-baf3-e9b7620a9995" class="">Arma com alto dano e uma cadência forte, projetada para segurar hordas de zumbis mais duráveis. Requer maior tempo de recarga e muita munição.</p></details></li></ul><ul id="12d8d3ef-68dd-8070-bf13-e3456d53c050" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Lança Chamas</strong></mark></summary><figure id="1388d3ef-68dd-8082-b851-d9440dd4bfc6" class="image"><a href="image%2015.png"><img style="width:108px" src="image%2015.png"/></a></figure><p id="12d8d3ef-68dd-806a-b990-c046f2d81d14" class="">Arma que projeta fogo em uma curta distância, causando dano contínuo e deixando inimigos em chamas por tempo limitado. Perfeita para zumbis em grupo.</p></details></li></ul><ul id="12d8d3ef-68dd-8078-92bf-d9b2e3e6a536" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Lança Míssil</strong></mark></summary><figure id="1388d3ef-68dd-80be-9011-f49ee841e3b9" class="image"><a href="image%2016.png"><img style="width:96px" src="image%2016.png"/></a></figure><p id="12d8d3ef-68dd-8013-9298-f96e439377b9" class="">Dispara explosivos que causam alto dano em área, perfeito para grandes hordas ou zumbis mais resistentes.</p></details></li></ul><ul id="1e98d3ef-68dd-8043-9fd8-eeaf6c44167e" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Canhão de Ar</strong></mark></summary><figure id="1e98d3ef-68dd-80af-aa78-f6d1e997642b" class="image"><a href="image%2017.png"><img style="width:192px" src="image%2017.png"/></a></figure><p id="1e98d3ef-68dd-80dd-b129-c19db6c6ea39" class="">Arma de alta pressão que dispara poderosos projéteis de ar comprimido, causando dano e empurrando inimigos por onde passa.</p><p id="1e98d3ef-68dd-8067-a211-c9b03525f9ad" class=""><br/><br/><br/></p><p id="1e98d3ef-68dd-8011-9fd7-e99f001130dc" class="">
+</p></details></li></ul><ul id="1e98d3ef-68dd-80b7-842d-f936e5a48d33" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Guarda-chuva-de-balas</strong></mark></summary><figure id="1e98d3ef-68dd-806f-9089-ff6142ca66d4" class="image"><a href="image%2018.png"><img style="width:144px" src="image%2018.png"/></a></figure><p id="1e98d3ef-68dd-802e-ac20-da4a98bd019d" class="">Um guarda-chuva de combate modificado, equipado com um mecanismo que dispara balas em todas as <strong>8 direções</strong>, criando um padrão de tiro circular em volta do usuário.</p></details></li></ul><h2 id="12d8d3ef-68dd-8035-9b3b-f70bc2f559e9" class=""><mark class="highlight-teal">Armas Secundárias</mark></h2><ul id="12d8d3ef-68dd-8004-ae74-e3c9127f9ea1" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Taco de Baseball</strong></mark></summary><figure id="1388d3ef-68dd-80a4-951f-e9f8783aff4e" class="image"><a href="image%2019.png"><img style="width:84px" src="image%2019.png"/></a></figure><p id="12d8d3ef-68dd-809a-89cf-fa87482cc4a2" class="">Arma corpo a corpo de manejo rápido, ideal para combates próximos com inimigos de baixa resistência.</p></details></li></ul><ul id="12d8d3ef-68dd-802a-b1e6-e301ba972153" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Machado</strong></mark></summary><figure id="1388d3ef-68dd-80a7-9b89-f617a0e0c226" class="image"><a href="image%2020.png"><img style="width:84px" src="image%2020.png"/></a></figure><p id="12d8d3ef-68dd-80c3-a157-eeffb7a514d8" class="">Arma de alto impacto, mas mais lenta, capaz de eliminar vários zumbis em poucos golpes.</p></details></li></ul><ul id="12d8d3ef-68dd-809c-87bb-e1b28f1f6779" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Katana</strong></mark></summary><figure id="1388d3ef-68dd-80bc-b025-ec641402c130" class="image"><a href="image%2021.png"><img style="width:84px" src="image%2021.png"/></a></figure><p id="12d8d3ef-68dd-80e4-82ab-e4be5c60c283" class="">Espada afiada com corte preciso e rápido, ideal para eliminar zumbis de perto com agilidade e letalidade. Oferece um equilíbrio entre alcance e velocidade de ataque.</p></details></li></ul><ul id="1378d3ef-68dd-801c-b221-fed68e7901d6" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Serra Elétrica</strong></mark></summary><figure id="1388d3ef-68dd-80b9-b6c4-c71b4dcf67bc" class="image"><a href="image%2022.png"><img style="width:96px" src="image%2022.png"/></a></figure><p id="986d7984-c0e6-49e4-9761-01e0876baeb1" class="">Arma pesada e poderosa, porém o seu alcance é baixo, tome cuidado ao maneja-la. </p></details></li></ul><ul id="1e98d3ef-68dd-8014-ba98-effe8ccc5efb" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Luvas Eletrificadas</strong></mark></summary><figure id="1e98d3ef-68dd-8007-abc6-e6d6093a29d8" class="image"><a href="image%2023.png"><img style="width:120px" src="image%2023.png"/></a></figure><p id="1e98d3ef-68dd-80bf-bb1a-d9d7776f6df8" class="">Arma de combate corpo a corpo de alta velocidade imbuída de <strong>eletricidade</strong>. Quando ativadas, as luvas emitem <strong>descargas elétricas</strong> que causam dano adicional aos inimigos próximos.</p></details></li></ul><ul id="1e98d3ef-68dd-8077-bb60-c83f4081c0b7" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>Bambu Enorme</strong></mark></summary><figure id="1e98d3ef-68dd-801a-b3ce-c40e3c788542" class="image"><a href="image%2024.png"><img style="width:240px" src="image%2024.png"/></a></figure><p id="1e98d3ef-68dd-8012-91a2-d0deb3970fa4" class="">Arma de <strong>gigante</strong> usada para <strong>golpes pesados</strong> e <strong>controle de área</strong>. Seu tamanho e força permitem <strong>derrubar múltiplos zumbis</strong> com um único golpe, porém por ser grande ela é lenta.</p></details></li></ul><h1 id="12d8d3ef-68dd-80c8-bd6f-d40dc6d38c73" class=""><mark class="highlight-blue">Munição</mark></h1><p id="1388d3ef-68dd-8080-b39f-c670805f2b26" class="">A munição em Zombiefactory tem um sistema único: Há apenas um tipo de munição para todas as armas. A diferença entre as armas está na quantidade de munição consumida por disparo.</p><ul id="1388d3ef-68dd-8034-90d8-e645cbae07f5" class="bulleted-list"><li style="list-style-type:disc">A <strong>pistola</strong> consome <strong>1 unidade por disparo</strong>, ou seja, 6 balas equivalem a 6 tiros.</li></ul><ul id="1388d3ef-68dd-806a-a077-ecdf17a2bae0" class="bulleted-list"><li style="list-style-type:disc">A <strong>shotgun</strong> consome <strong>2 unidades por disparo</strong>, então, com 6 balas, o jogador consegue disparar 3 vezes.</li></ul><ul id="1388d3ef-68dd-8065-a911-eb66f1ab5830" class="bulleted-list"><li style="list-style-type:disc">A <strong>sniper</strong> consome <strong>6 unidades por disparo</strong>, então, com 6 balas, o jogador consegue disparar apenas 1 vez.</li></ul><div id="12d8d3ef-68dd-8011-b950-c51801b5f83c" class="collection-content"><h4 class="collection-title">Armas</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Nome</th><th><span class="icon property-icon"><div data-testid="/icons/list_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/list_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/list_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Tags</th><th><span class="icon property-icon"><div data-testid="/icons/hashtag_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/hashtag_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/hashtag_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Dano</th><th><span class="icon property-icon"><div data-testid="/icons/hashtag_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/hashtag_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/hashtag_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Cadência</th><th><span class="icon property-icon"><div data-testid="/icons/hashtag_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/hashtag_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/hashtag_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Pente</th><th><span class="icon property-icon"><div data-testid="/icons/description_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/description_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/description_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Gasto de Munição</th><th><span class="icon property-icon"><div data-testid="/icons/description_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/description_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/description_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Comportamento</th></tr></thead><tbody><tr id="bb0d6eea-e05a-4579-9087-7efbf3c40598"><td class="cell-title"><a href="Pistola%20bb0d6eeae05a457990877efbf3c40598.html">Pistola</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">10</td><td class="cell-Zp?W">50</td><td class="cell-&lt;~_[">6</td><td class="cell-QsN}">1<br/><br/></td><td class="cell-eOj@">Acertos críticos causam 3 vezes o dano base ao invés de 2 vezes.</td></tr><tr id="5e51c9b2-6192-4070-9c54-424d97d1e234"><td class="cell-title"><a href="Shotgun%205e51c9b2619240709c54424d97d1e234.html">Shotgun</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">50</td><td class="cell-Zp?W">20</td><td class="cell-&lt;~_[">2</td><td class="cell-QsN}">4</td><td class="cell-eOj@">Dano dobrado para quando acerta todos os tiros em um alvo só. </td></tr><tr id="14e8567a-4a4c-4735-a080-69da4797fb1b"><td class="cell-title"><a href="Rifle%20de%20Assalto%2014e8567a4a4c4735a08069da4797fb1b.html">Rifle de Assalto</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">30</td><td class="cell-Zp?W">70</td><td class="cell-&lt;~_[">24</td><td class="cell-QsN}">2</td><td class="cell-eOj@">Aumenta o dano base por tiro continuo, +1 por tiro até soltar o gatilho. </td></tr><tr id="12d8d3ef-68dd-8017-a28c-dfce4dda5133"><td class="cell-title"><a href="Sniper%2012d8d3ef68dd8017a28cdfce4dda5133.html">Sniper</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">80</td><td class="cell-Zp?W">10</td><td class="cell-&lt;~_[">5</td><td class="cell-QsN}">6</td><td class="cell-eOj@">Tiro perfura todos os alvos.</td></tr><tr id="12d8d3ef-68dd-801d-862c-de31a350c11f"><td class="cell-title"><a href="Metralhadora%20Leve%20(SMG)%2012d8d3ef68dd801d862cde31a350c11f.html">Metralhadora Leve (SMG)</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">5</td><td class="cell-Zp?W">100</td><td class="cell-&lt;~_[">40</td><td class="cell-QsN}">1</td><td class="cell-eOj@">Acertos críticos tem 50% de chance de fornecer uma bala.</td></tr><tr id="12d8d3ef-68dd-808b-a74b-c7349f336565"><td class="cell-title"><a href="Minigun%2012d8d3ef68dd808ba74bc7349f336565.html">Minigun</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">20</td><td class="cell-Zp?W">100</td><td class="cell-&lt;~_[">100</td><td class="cell-QsN}">2</td><td class="cell-eOj@">Dano perfurante e quanto mais tempo atirando mais dano causa +1 por segundo até soltar o gatilho</td></tr><tr id="12d8d3ef-68dd-8015-8fe1-cb4acce89ca8"><td class="cell-title"><a href="Lanc%CC%A7a-Chamas%2012d8d3ef68dd80158fe1cb4acce89ca8.html">Lança-Chamas</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">50</td><td class="cell-Zp?W">100</td><td class="cell-&lt;~_[">100</td><td class="cell-QsN}">10 por segundo</td><td class="cell-eOj@">Dano ao longo do tempo e causa queimadura em zumbis</td></tr><tr id="12d8d3ef-68dd-803d-a2dc-eebd7839e5b5"><td class="cell-title"><a href="Lanc%CC%A7a-Mi%CC%81ssil%2012d8d3ef68dd803da2dceebd7839e5b5.html">Lança-Míssil</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">80</td><td class="cell-Zp?W">10</td><td class="cell-&lt;~_[">5</td><td class="cell-QsN}">20</td><td class="cell-eOj@">Explosão atordoa inimigos por 3 segundos.</td></tr><tr id="1e98d3ef-68dd-80fc-b9e6-dfb646e92909"><td class="cell-title"><a href="Canha%CC%83o%20de%20Ar%201e98d3ef68dd80fcb9e6dfb646e92909.html">Canhão de Ar</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">120</td><td class="cell-Zp?W">15</td><td class="cell-&lt;~_[">2</td><td class="cell-QsN}">40</td><td class="cell-eOj@">Causa muito dano e empurra inimigos próximos do alvo</td></tr><tr id="1e98d3ef-68dd-80ad-8ab8-e0c41b924f74"><td class="cell-title"><a href="Guarda-chuva-de-balas%201e98d3ef68dd80ad8ab8e0c41b924f74.html">Guarda-chuva-de-balas</a></td><td class="cell-Tda["><span class="selected-value select-value-color-green">Primária</span></td><td class="cell-BETA">10</td><td class="cell-Zp?W">40</td><td class="cell-&lt;~_[">36</td><td class="cell-QsN}">6</td><td class="cell-eOj@">Dispara em 8 direções ao mesmo tempo.</td></tr><tr id="12d8d3ef-68dd-8042-a522-f1bd1904998a"><td class="cell-title"><a href="Taco%20de%20Baseball%2012d8d3ef68dd8042a522f1bd1904998a.html">Taco de Baseball</a></td><td class="cell-Tda["><span class="selected-value select-value-color-yellow">Secundária</span></td><td class="cell-BETA">20</td><td class="cell-Zp?W">20</td><td class="cell-&lt;~_[">0</td><td class="cell-QsN}">0</td><td class="cell-eOj@">Chance de empurrar inimigos próximos</td></tr><tr id="12d8d3ef-68dd-8006-ae0d-dbe01b9ad0be"><td class="cell-title"><a href="Machado%20Grande%2012d8d3ef68dd8006ae0ddbe01b9ad0be.html">Machado Grande</a></td><td class="cell-Tda["><span class="selected-value select-value-color-yellow">Secundária</span></td><td class="cell-BETA">30</td><td class="cell-Zp?W">20</td><td class="cell-&lt;~_[">0</td><td class="cell-QsN}">0</td><td class="cell-eOj@">Grande area de alcance &gt; 180°</td></tr><tr id="12d8d3ef-68dd-80ef-a65d-cd0f7a7fefcb"><td class="cell-title"><a href="Katana%2012d8d3ef68dd80efa65dcd0f7a7fefcb.html">Katana</a></td><td class="cell-Tda["><span class="selected-value select-value-color-yellow">Secundária</span></td><td class="cell-BETA">60</td><td class="cell-Zp?W">80</td><td class="cell-&lt;~_[">0</td><td class="cell-QsN}">0</td><td class="cell-eOj@">50% de chance de dar hitkill em inimigos comuns.</td></tr><tr id="12d8d3ef-68dd-8020-9028-d13601b94eb6"><td class="cell-title"><a href="Serra%20Ele%CC%81trica%2012d8d3ef68dd80209028d13601b94eb6.html">Serra Elétrica</a></td><td class="cell-Tda["><span class="selected-value select-value-color-yellow">Secundária</span></td><td class="cell-BETA">30</td><td class="cell-Zp?W">40</td><td class="cell-&lt;~_[">0</td><td class="cell-QsN}">0</td><td class="cell-eOj@">Puxa inimigos bem próximos para a serra.</td></tr><tr id="1e98d3ef-68dd-8010-9b01-f5601d102449"><td class="cell-title"><a href="Luvas%20Eletrificadas%201e98d3ef68dd80109b01f5601d102449.html">Luvas Eletrificadas</a></td><td class="cell-Tda["><span class="selected-value select-value-color-yellow">Secundária</span></td><td class="cell-BETA">10</td><td class="cell-Zp?W">120</td><td class="cell-&lt;~_[">0</td><td class="cell-QsN}">0</td><td class="cell-eOj@">Ataca muito rápido e pode eletrocutar alvos.</td></tr><tr id="1e98d3ef-68dd-80de-85c9-f4c5053574a9"><td class="cell-title"><a href="Bambu%20Enorme%201e98d3ef68dd80de85c9f4c5053574a9.html">Bambu Enorme</a></td><td class="cell-Tda["><span class="selected-value select-value-color-yellow">Secundária</span></td><td class="cell-BETA">80</td><td class="cell-Zp?W">10</td><td class="cell-&lt;~_[">0</td><td class="cell-QsN}">0</td><td class="cell-eOj@">Arma grande lenta e pesada porém causa quantidades altas de dano em área. </td></tr></tbody></table><br/><br/></div><p id="12d8d3ef-68dd-8092-b072-deed197e9212" class="">
+</p><hr id="12d8d3ef-68dd-809e-835d-d94d82a3b2f6"/><p id="12d8d3ef-68dd-80b1-bc6d-d14e6420c087" class="">
+</p><p id="12d8d3ef-68dd-80cc-96e0-dbc53cb12887" class="">
+</p><p id="12d8d3ef-68dd-8063-b5bd-d38028602de5" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

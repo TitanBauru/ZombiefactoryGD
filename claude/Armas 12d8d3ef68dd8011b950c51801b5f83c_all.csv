@@ -1,0 +1,18 @@
+﻿Nome,Tags,Dano,Cadência,Pente,Gasto de Munição,Comportamento
+Pistola,Primária,10,50,6,"1
+",Acertos críticos causam 3 vezes o dano base ao invés de 2 vezes.
+Shotgun,Primária,50,20,2,4,"Dano dobrado para quando acerta todos os tiros em um alvo só. "
+Rifle de Assalto,Primária,30,70,24,2,"Aumenta o dano base por tiro continuo, +1 por tiro até soltar o gatilho. "
+Sniper,Primária,80,10,5,6,Tiro perfura todos os alvos.
+Metralhadora Leve (SMG),Primária,5,100,40,1,Acertos críticos tem 50% de chance de fornecer uma bala.
+Minigun,Primária,20,100,100,2,Dano perfurante e quanto mais tempo atirando mais dano causa +1 por segundo até soltar o gatilho
+Lança-Chamas,Primária,50,100,100,10 por segundo,Dano ao longo do tempo e causa queimadura em zumbis
+Lança-Míssil,Primária,80,10,5,20,Explosão atordoa inimigos por 3 segundos.
+Canhão de Ar,Primária,120,15,2,40,Causa muito dano e empurra inimigos próximos do alvo
+Guarda-chuva-de-balas,Primária,10,40,36,6,Dispara em 8 direções ao mesmo tempo.
+Taco de Baseball,Secundária,20,20,0,0,Chance de empurrar inimigos próximos
+Machado Grande,Secundária,30,20,0,0,Grande area de alcance > 180°
+Katana,Secundária,60,80,0,0,50% de chance de dar hitkill em inimigos comuns.
+Serra Elétrica,Secundária,30,40,0,0,Puxa inimigos bem próximos para a serra.
+Luvas Eletrificadas,Secundária,10,120,0,0,Ataca muito rápido e pode eletrocutar alvos.
+Bambu Enorme,Secundária,80,10,0,0,"Arma grande lenta e pesada porém causa quantidades altas de dano em área. "

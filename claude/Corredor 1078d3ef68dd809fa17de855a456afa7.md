@@ -1,0 +1,12 @@
+# Corredor
+
+Cadência: 50
+Chance de Crítico: 50
+Dano: 30
+Inventário: 50
+Regeneração Passiva: 20
+Tempo de Spawn: 50
+Velocidade de Movimento: 20
+Velocidade de Recarga: 50
+Vida Máxima: 30
+Vigor: 100

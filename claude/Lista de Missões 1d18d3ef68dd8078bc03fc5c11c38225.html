@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Lista de Missões</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1d18d3ef-68dd-8078-bc03-fc5c11c38225" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/></div><h1 class="page-title">Lista de Missões</h1><p class="page-description"></p></header><div class="page-body"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Mission Name</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/target_gray.svg" style="width:14px;height:14px;display:block"/></span>Objective</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/categories_gray.svg" style="width:14px;height:14px;display:block"/></span>Mission Type</th></tr></thead><tbody><tr id="1d18d3ef-68dd-809f-a797-d6204ecc8603"><td class="cell-title"><a href="Memo%CC%81rias%20Perdidas%201d18d3ef68dd809fa797d6204ecc8603.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Memórias Perdidas</a></td><td class="cell-ub&lt;r">Recupere a boneca de Sarah, ela perdeu ela fugindo de zombies ao norte da fábrica. </td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1d18d3ef-68dd-8083-9c54-ff09e811b899"><td class="cell-title"><a href="Sile%CC%82ncio%20Mortal%201d18d3ef68dd80839c54ff09e811b899.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Silêncio Mortal</a></td><td class="cell-ub&lt;r">Sobreviva a uma noite sem usar nenhuma arma de fogo.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1d18d3ef-68dd-8099-b925-d5d76d263374"><td class="cell-title"><a href="A%20Cura%20Esta%CC%81%20em%20Suas%20Ma%CC%83os%201d18d3ef68dd8099b925d5d76d263374.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>A Cura Está em Suas Mãos</a></td><td class="cell-ub&lt;r">Colete 5 kits médicos para a enfermeira.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1eb8d3ef-68dd-802c-bb1d-ddc65c96e592"><td class="cell-title"><a href="Infestac%CC%A7a%CC%83o%20Ba%CC%81sica%201eb8d3ef68dd802cbb1dddc65c96e592.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Infestação Básica</a></td><td class="cell-ub&lt;r">Mate x zombies comuns</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-803e-9f60-f06724f7482d"><td class="cell-title"><a href="Casca%20Dura%201eb8d3ef68dd803e9f60f06724f7482d.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Casca Dura</a></td><td class="cell-ub&lt;r">Mate x zombies blindados</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-8058-9a90-ece1ed4fe1ec"><td class="cell-title"><a href="Cuidado%20ao%20Tocar%201eb8d3ef68dd80589a90ece1ed4fe1ec.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Cuidado ao Tocar</a></td><td class="cell-ub&lt;r">Mate x zombies explosivos</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-808b-9d15-f8d0bae37cf5"><td class="cell-title"><a href="Correria%20Noturna%201eb8d3ef68dd808b9d15f8d0bae37cf5.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Correria Noturna</a></td><td class="cell-ub&lt;r">Mate x zombies ágeis </td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-8047-a2e7-de887ec2db6b"><td class="cell-title"><a href="Bota%CC%82nica%20Hostil%201eb8d3ef68dd8047a2e7de887ec2db6b.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Botânica Hostil</a></td><td class="cell-ub&lt;r">Mate x plantas cospidoras</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-809e-a338-e29d6ff60990"><td class="cell-title"><a href="Ar%20de%20Veneno%201eb8d3ef68dd809ea338e29d6ff60990.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Ar de Veneno</a></td><td class="cell-ub&lt;r">Mate x zombies venenosos</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-801c-8753-f76b1527aef8"><td class="cell-title"><a href="Rai%CC%81zes%20do%20Mal%201eb8d3ef68dd801c8753f76b1527aef8.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Raízes do Mal</a></td><td class="cell-ub&lt;r">Mate x zombies enraizados</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-80a5-9b93-f46bb40114d1"><td class="cell-title"><a href="Pisando%20em%20Gigantes%201eb8d3ef68dd80a59b93f46bb40114d1.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Pisando em Gigantes</a></td><td class="cell-ub&lt;r">Mate x zombies gigantes</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-801f-95a5-f21d260b0b11"><td class="cell-title"><a href="Lama%20e%20Terror%201eb8d3ef68dd801f95a5f21d260b0b11.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Lama e Terror</a></td><td class="cell-ub&lt;r">Mate x zombies lamacentos</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-8011-a441-d3422ffae6f4"><td class="cell-title"><a href="Turno%20Final%201eb8d3ef68dd8011a441d3422ffae6f4.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Turno Final</a></td><td class="cell-ub&lt;r">Mate x zombies mineradores</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-80c3-ad47-e6f072df547c"><td class="cell-title"><a href="Sombras%20que%20Andam%201eb8d3ef68dd80c3ad47e6f072df547c.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Sombras que Andam</a></td><td class="cell-ub&lt;r">Mate x zombies translucidos</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-80d6-8461-ce4e4465199a"><td class="cell-title"><a href="Frio%20na%20Espinha%201eb8d3ef68dd80d68461ce4e4465199a.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Frio na Espinha</a></td><td class="cell-ub&lt;r">Mate x zombies gelidos</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-809e-b536-f35cacbf235a"><td class="cell-title"><a href="Quebra-Corpos%201eb8d3ef68dd809eb536f35cacbf235a.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Quebra-Corpos</a></td><td class="cell-ub&lt;r">Mate x zombies partidos</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-808f-a79d-e6b3b3c9b100"><td class="cell-title"><a href="Na%CC%83o%20Morrem%20Nunca%201eb8d3ef68dd808fa79de6b3b3c9b100.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Não Morrem Nunca</a></td><td class="cell-ub&lt;r">Mate x zombies regenerativos</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-8000-9170-d122b00dd34a"><td class="cell-title"><a href="Fome%20Eterna%201eb8d3ef68dd80009170d122b00dd34a.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Fome Eterna</a></td><td class="cell-ub&lt;r">Mate x zombies carniçais</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-8088-a758-d8f19145d778"><td class="cell-title"><a href="Execuc%CC%A7a%CC%83o%20Implaca%CC%81vel%201eb8d3ef68dd8088a758d8f19145d778.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Execução Implacável</a></td><td class="cell-ub&lt;r">Mate x zombies executores</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-80ef-8c48-ee92d390ce58"><td class="cell-title"><a href="Sile%CC%82ncio%20dos%20Mortos%201eb8d3ef68dd80ef8c48ee92d390ce58.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Silêncio dos Mortos</a></td><td class="cell-ub&lt;r">Mate x zombies necromantes</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-80cd-b785-eec993341ccf"><td class="cell-title"><a href="Cavaleiros%20do%20Fim%201eb8d3ef68dd80cdb785eec993341ccf.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Cavaleiros do Fim</a></td><td class="cell-ub&lt;r">Mate x zombies cavaleiros</td><td class="cell-HENB"><span class="selected-value select-value-color-red">Extermination</span></td></tr><tr id="1eb8d3ef-68dd-804a-901f-f4cc1b60df55"><td class="cell-title"><a href="Ferramentas%20de%20Sobrevive%CC%82ncia%201eb8d3ef68dd804a901ff4cc1b60df55.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Ferramentas de Sobrevivência</a></td><td class="cell-ub&lt;r">Encontre 3 Caixas de Ferramentas para o mecânico concertar e gerador.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1eb8d3ef-68dd-800a-be23-d4223c546c3b"><td class="cell-title"><a href="Sustento%20Essencial%201eb8d3ef68dd800abe23d4223c546c3b.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Sustento Essencial</a></td><td class="cell-ub&lt;r">Recupere 10 Pacotes de Rações.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1eb8d3ef-68dd-8005-ad99-e4654f8fdcf6"><td class="cell-title"><a href="Conserto%20Necessa%CC%81rio%201eb8d3ef68dd8005ad99e4654f8fdcf6.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Conserto Necessário</a></td><td class="cell-ub&lt;r">Coleta de 5 Peças de armas quebradas. Para o armeiro.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1eb8d3ef-68dd-80b6-9b5c-c771702e81c5"><td class="cell-title"><a href="O%20U%CC%81ltimo%20Testamento%201eb8d3ef68dd80b69b5cc771702e81c5.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>O Último Testamento</a></td><td class="cell-ub&lt;r">Encontre o Diário Perdido de Maria, em algum lugar ao sul da fábrica.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1eb8d3ef-68dd-802d-8194-f0ea2557068b"><td class="cell-title"><a href="Circuito%20Vital%201eb8d3ef68dd802d8194f0ea2557068b.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Circuito Vital</a></td><td class="cell-ub&lt;r">Recupere 4 Placas de Circuito para o Engenheiro.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1eb8d3ef-68dd-80a8-a482-c57676c6086a"><td class="cell-title"><a href="Mutac%CC%A7a%CC%83o%20Vegetal%201eb8d3ef68dd80a8a482c57676c6086a.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Mutação Vegetal</a></td><td class="cell-ub&lt;r">Colete 3 Amostras de Planta Mutante no Jardim Esquecido.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1eb8d3ef-68dd-8028-82b0-e7c81894d728"><td class="cell-title"><a href="La%CC%82minas%20Famintas%201eb8d3ef68dd802882b0e7c81894d728.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Lâminas Famintas</a></td><td class="cell-ub&lt;r">Derrote X zumbis usando apenas armas brancas.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1eb8d3ef-68dd-80aa-967d-f9f5c2c28d26"><td class="cell-title"><a href="Intoca%CC%81vel%201eb8d3ef68dd80aa967df9f5c2c28d26.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Intocável</a></td><td class="cell-ub&lt;r">Sobreviva a uma noite sem receber dano.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1eb8d3ef-68dd-80d4-817b-f01dd4295056"><td class="cell-title"><a href="Nas%20chamas%20do%20inferno%201eb8d3ef68dd80d4817bf01dd4295056.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Nas chamas do inferno</a></td><td class="cell-ub&lt;r">Mate 200 inimigos com o lança chamas</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1ed8d3ef-68dd-8002-92a5-e1b290338a00"><td class="cell-title"><a href="Borracharia%20do%20fim%20do%20mundo%201ed8d3ef68dd800292a5e1b290338a00.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Borracharia do fim do mundo</a></td><td class="cell-ub&lt;r">Encontre 4 pneus para concertar o carro de policia.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1ed8d3ef-68dd-80d4-8160-f8cfa8c1953f"><td class="cell-title"><a href="Upgrade%20High%20Ending%201ed8d3ef68dd80d48160f8cfa8c1953f.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Upgrade High Ending</a></td><td class="cell-ub&lt;r">Busque 3 monitores para montar o setup do garotinho.</td><td class="cell-HENB"><span class="selected-value select-value-color-green">Collection</span></td></tr><tr id="1ed8d3ef-68dd-80fe-a441-e24b634d149b"><td class="cell-title"><a href="Pelo%20lado%20errado%201ed8d3ef68dd80fea441e24b634d149b.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Pelo lado errado</a></td><td class="cell-ub&lt;r">Sobreviva uma noite sem pisar na area da fábrica.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1ed8d3ef-68dd-8033-9203-c5193d28e221"><td class="cell-title"><a href="Efeito%20colateral%201ed8d3ef68dd80339203c5193d28e221.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Efeito colateral</a></td><td class="cell-ub&lt;r">Mate 500 zombies através de tiros perfurantes.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1ed8d3ef-68dd-80f7-b6ce-c0843de75ac7"><td class="cell-title"><a href="Eu%20sou%20a%20velocidade%201ed8d3ef68dd80f7b6cec0843de75ac7.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Eu sou a velocidade</a></td><td class="cell-ub&lt;r">Mate 10 zombies em menos de 1 segundo.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1ed8d3ef-68dd-80b2-ba73-d6ace628e337"><td class="cell-title"><a href="Dedo%20nervoso%201ed8d3ef68dd80b2ba73d6ace628e337.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Dedo nervoso</a></td><td class="cell-ub&lt;r">Gaste um total de 1000 de munição.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1ed8d3ef-68dd-807f-a8ea-f37637da1b2b"><td class="cell-title"><a href="Mira%20perfeita%201ed8d3ef68dd807fa8eaf37637da1b2b.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Mira perfeita</a></td><td class="cell-ub&lt;r">Mate 20 zombies com armas de fogo em sequência sem errar nenhum tiro.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr><tr id="1ed8d3ef-68dd-809c-a577-ca3e994161e2"><td class="cell-title"><a href="Demolic%CC%A7a%CC%83o%201ed8d3ef68dd809ca577ca3e994161e2.html"><img class="icon" src="https://www.notion.so/icons/target_gray.svg"/>Demolição</a></td><td class="cell-ub&lt;r">Mate 100 zombies com explosões.</td><td class="cell-HENB"><span class="selected-value select-value-color-blue">Specialist</span></td></tr></tbody></table><br/><br/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

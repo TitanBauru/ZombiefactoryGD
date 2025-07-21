@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Fábrica</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1078d3ef-68dd-80e1-b867-f5b1569b0f31" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">✅</span></div><h1 class="page-title">Fábrica</h1><p class="page-description"></p></header><div class="page-body"><h1 id="10c8d3ef-68dd-8074-a7e5-e25d68fe9a4e" class=""><mark class="highlight-blue">Definição</mark></h1><p id="10c8d3ef-68dd-80ae-af99-d254574df69b" class="">O jogador constrói e gerencia uma fábrica para coletar matéria prima e transformar em barra ou líquido para a venda enquanto compra torres e armas para defesa dela.</p><h1 id="10c8d3ef-68dd-8010-a001-ee90464ed1ee" class=""><mark class="highlight-blue">Núcleo</mark></h1><p id="10c8d3ef-68dd-80bf-9906-f5a9062f9b72" class="">O núcleo da fábrica localizado em seu centro é o coração dela, o trabalho do jogador é proteger o núcleo dos zombies, ele possui uma vida (10000) que não pode ser regenerada. O núcleo possuí uma area que aumenta drasticamente a regeneração passiva do jogador enquanto ele esta por perto. </p><p id="1118d3ef-68dd-801d-9b5c-f9150bdc928d" class="">
+</p><p id="1118d3ef-68dd-8008-b6f0-ed7c62452bf1" class="">Quando o jogador morre, ele ressurge próximo ao núcleo depois de que seu tempo de respawn chega em zero. Caso o núcleo seja destruído, o jogador perde o jogo.</p><figure id="10c8d3ef-68dd-804e-80f3-cdaf3773b87d" class="image"><a href="image%2029.png"><img style="width:288px" src="image%2029.png"/></a></figure><h2 id="10c8d3ef-68dd-8045-a87b-e7fd8e4a641e" class=""><mark class="highlight-teal">Estagio Inicial</mark></h2><p id="10c8d3ef-68dd-80fd-a59b-eb4228931df3" class="">Sempre que o jogador inicia um novo jogo, ele surge em uma próximo a um núcleo, então sua primeira tarefa é realizar algumas construções simples para que a fábrica comece a funcionar.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="10e8d3ef-68dd-80a2-9be4-dbf6fa8fa04e"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><p id="5c649a3b-e112-490d-b3ed-2226a2b2190e" class=""><mark class="highlight-teal">Fazer com que o jogador escolha o local onde quer construir o núcleo da fábrica</mark>. Ou que precise encontrar e reativar um núcleo pelo mapa. </p></div></figure><p id="10c8d3ef-68dd-8093-b0c1-d98446c13ce2" class="">O jogador também pode optar por construir torres de defesa, ou construir um coletor, porém a segunda opção pode ser mais arriscada uma vez que o jogador deve proteger a fábrica na primeira noite sem nenhuma torre de defesa. </p><p id="10c8d3ef-68dd-80bb-b0f8-f134dadb2c1c" class="">
+</p><p id="10c8d3ef-68dd-80b0-8f76-def2d4319a80" class="">Esse inicio incentiva o jogador a já começar sua estratégia, seja focada em defesa, coleta de recursos ou exploração.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="10c8d3ef-68dd-8052-bf02-f38a5b5dffc4"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><p id="93c1fa99-01af-4a9e-8be1-a81655f11614" class="">Através de desbloqueios permanentes o jogador inicia a partida com mais dinheiro. </p></div></figure><h1 id="10c8d3ef-68dd-80fb-a1d4-fc54aef3aef6" class=""><mark class="highlight-blue">Construções</mark></h1><p id="10c8d3ef-68dd-80b8-a910-dbb4e90574cb" class="">O  jogador pode construir torres dentro do perímetro da fábrica que é delimitado pelo núcleo. </p><figure id="10c8d3ef-68dd-804c-9c36-e13836ceb7ad" class="image"><a href="image%2030.png"><img style="width:528px" src="image%2030.png"/></a></figure><p id="10c8d3ef-68dd-8013-92a5-ec9c1600dedd" class="">Assim como todas as construções o jogador pode melhorar o núcleo em até 4 vezes, aumentando assim sua vida, o perímetro da fábrica e o arsenal de construções que o jogador tem disponível. </p><p id="10e8d3ef-68dd-807b-8600-d3e9f63a3e6f" class="">
+</p><h3 id="10c8d3ef-68dd-805d-ae6f-dfcaf78dd728" class="">Tipos de Construções:</h3><p id="10c8d3ef-68dd-80f4-a4b7-ec684221fb74" class=""><mark class="highlight-teal"><strong>Extratores: </strong></mark>Os extratores permitem que o jogador extraia matéria-prima passivamente dentro da fábrica. Cada extrator tem 4 níveis de evolução dentro de duas arvores. A medida em que o nível do extrator é melhorado, novos materiais para coleta também são e os atributos bases aumentam também.</p><p id="10c8d3ef-68dd-80da-a5ac-e8fb4749404c" class=""><mark class="highlight-teal"><strong>Refinadores:</strong></mark> Refinadores tratam a matéria-prima, transformando-a em barras, o que a torna mais valiosa para os vendedores. Este processo leva tempo, mas aumenta o valor de mercado. Caso o jogador precise de dinheiro rapidamente, ele pode optar por vender o material bruto.</p><p id="10c8d3ef-68dd-806d-a2a4-d02cc639562d" class=""><mark class="highlight-teal"><strong>Fornalhas: </strong></mark> Fornalhas transformam a matéria-prima em líquidos, o que assim como os refinadores fazem tornam a matéria prima mais valiosa para os vendedores.</p><p id="10c8d3ef-68dd-8003-bd71-e8a87b5a77f4" class=""><mark class="highlight-teal"><strong>Torres: </strong></mark>As torres são parte principal da gameplay, pois elas são a melhor forma de se defender das hordas que aparecem anoite. </p><p id="1118d3ef-68dd-80a0-ae3b-c3db66f62c36" class="">
+</p><p id="1118d3ef-68dd-8094-8821-da7cec265c13" class="">Atributos de construções</p><p id="1118d3ef-68dd-8070-a4ef-e9532ad3ed8f" class="">Todas as construções compartilham os mesmos atributos </p><h1 id="1118d3ef-68dd-806b-b21f-f2c439fac314" class=""><mark class="highlight-blue">Atributos</mark></h1><p id="1118d3ef-68dd-806b-8f86-dc010428bd5e" class="">As construções possuem diversos atributos, alguns gerais e outros específicos para o tipo de construção</p><h2 id="1118d3ef-68dd-804d-b2b3-e224c1927ab6" class="">Gerais</h2><ul id="1118d3ef-68dd-808c-ba62-f3f75cf32ef1" class="toggle"><li><details open=""><summary><strong>💖 </strong><mark class="highlight-teal"><strong>Vida Máxima e Atual</strong></mark></summary><p id="812cfc6a-1d7c-4e6a-8f0f-ab9dfa1e2c71" class="">Define a quantidade de vida maxima da construção. Ao chegar em zero a construção é destruída.</p></details></li></ul><ul id="1118d3ef-68dd-8092-a1fb-c69ad67562cf" class="toggle"><li><details open=""><summary><strong>🧬</strong><mark class="highlight-teal"><strong> Level</strong></mark></summary><p id="1118d3ef-68dd-803d-9c29-cc7b049cfaee" class="">Iniciando no nível 1, e podendo chegar até o nível 4, todas as construções podem ser melhoradas com dinheiro. Quando o jogador realiza uma melhoria na torre ela é concertada automaticamente.</p></details></li></ul><ul id="1118d3ef-68dd-80ab-b1e1-c92b93284a45" class="toggle"><li><details open=""><summary><mark class="highlight-teal">💰</mark><mark class="highlight-teal"><strong> Custo para melhoria</strong></mark></summary><p id="1118d3ef-68dd-8075-a2ba-c5a84b43d155" class="">Valor necessário para subir o nível da construção.</p></details></li></ul><ul id="1118d3ef-68dd-809b-9082-d7f6167b9ec4" class="toggle"><li><details open=""><summary><mark class="highlight-teal">💸</mark><mark class="highlight-teal"><strong> Valor de Venda</strong></mark></summary><p id="1118d3ef-68dd-80ff-9f9b-e9b50d405a67" class="">Valor que a construção vale caso o jogador queira destruí-la (75% de todo valor investido).</p></details></li></ul><h2 id="1118d3ef-68dd-80b7-88b3-e369dba29061" class="">Torres</h2><ul id="1118d3ef-68dd-80a4-8924-c1177231a1b4" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>🗡️ Dano </strong></mark></summary><p id="1118d3ef-68dd-8017-bc3d-c127cfbde8e8" class="">O dano define a quantidade de dano causada pelas torres.</p></details></li></ul><ul id="1118d3ef-68dd-80f4-804b-eb106aa159f6" class="toggle"><li><details open=""><summary>🏹 <mark class="highlight-teal"><strong>Alcance </strong></mark></summary><p id="1118d3ef-68dd-800b-ab24-fffccd13bec2" class="">Definido por um diâmetro, o alcance determina quando a torre pode atirar em um alvo ou não. </p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1118d3ef-68dd-8047-b21b-d8be249da5ae"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><p id="e6469fbf-02c2-4faa-a3e2-a36435a8fe83" class="">Uma vez que a torre dispara, não importa mais se a unidade esta no alcance ou não.</p></div></figure></details></li></ul><ul id="1118d3ef-68dd-80eb-ae22-cb768d186814" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>📦 Tipo de Projeteis </strong></mark></summary><p id="1c829166-357c-4938-8509-985bfa22901b" class="">As torres possuem diferentes tipos de projeteis, como tiro congelante, etc… alguns pode causar mais dano a determinados zombies. (Mais sobre os tipo de projeteis estão disponíveis no documento  ).</p></details></li></ul><ul id="1118d3ef-68dd-801d-9a70-ca36f65fc4c8" class="toggle"><li><details open=""><summary>💨 <mark class="highlight-teal"><strong>Cadência</strong></mark></summary><p id="e19d7d07-5012-455f-91f2-98bd06430c26" class="">Define a velocidade com que a torre dispara.</p></details></li></ul><h2 id="10c8d3ef-68dd-80b7-9e67-d230a5422f4a" class="">Refinadores / Extratores / Fornalha</h2><ul id="1118d3ef-68dd-80b8-b1f0-d39d1fb078ee" class="toggle"><li><details open=""><summary><mark class="highlight-teal">💎 </mark><mark class="highlight-teal"><strong>Tipo de Material</strong></mark></summary><p id="1118d3ef-68dd-80a0-bf22-fbd3d5e8b0e3" class="">Define qual tipo de material ele consegue extrair / tratar ou produzir.</p></details></li></ul><ul id="1118d3ef-68dd-803b-968c-ded98e108979" class="toggle"><li><details open=""><summary>🔢<mark class="highlight-teal"><strong> Quantidade de Item</strong></mark></summary><p id="dba5fbbb-242d-43c9-a1e5-974f99cc5fa5" class="">Quantidade de itens que serão Refinados/ Extraídos/ produzidos toda vez que o tempo de output chegar a 0.</p></details></li></ul><ul id="1118d3ef-68dd-807c-910c-d106a6a00acc" class="toggle"><li><details open=""><summary><mark class="highlight-teal">⏰ </mark><mark class="highlight-teal"><strong>Tempo</strong></mark></summary><p id="1118d3ef-68dd-800f-aed4-d702f826ecfa" class="">Define quanto tempo leva para extrair / refinar ou produzir determinado material.</p></details></li></ul><p id="11f8d3ef-68dd-8060-b767-c6ec57959894" class="">
+</p><figure id="11e8d3ef-68dd-8058-8c44-fa52f976a636" class="link-to-page"><a href="Torres%2011e8d3ef68dd80588c44fa52f976a636.html"><span class="icon">✅</span>Torres</a></figure><figure id="12d8d3ef-68dd-8082-86d4-f559d70919a9" class="link-to-page"><a href="Extratores%2012d8d3ef68dd808286d4f559d70919a9.html"><span class="icon">✅</span>Extratores</a></figure><figure id="12f8d3ef-68dd-801e-a2fa-f1c652021cb9" class="link-to-page"><a href="Refinador%20e%20Fornalha%2012f8d3ef68dd801ea2faf1c652021cb9.html"><span class="icon">✅</span>Refinador e Fornalha</a></figure><p id="1818d3ef-68dd-800e-947b-dcff13b32ed8" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

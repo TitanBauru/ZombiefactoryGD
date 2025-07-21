@@ -1,0 +1,11 @@
+﻿Zombie,Visual,Descrição,Vida,Velocidade de Movimento,Dano
+Comum,https://i.pinimg.com/736x/b0/79/91/b07991655eb21a7ecd15c5790d80f5f7.jpg,"Um inimigo básico com ataque direto e pouca resistência. Ótimo para o jogador aprender os fundamentos do combate. No entanto, em grandes quantidades, pode se tornar uma ameaça significativa.",100,20,20
+Blindado,https://preview.redd.it/a-new-idea-a-zombie-wall-v0-we5iaoha2kda1.png?width=490&format=png&auto=webp&s=bdc73de3ae92e186c37e214830de07a10b29ed83,"Revestido por uma armadura resistente, este zumbi recebe menos dano, exigindo armas mais fortes ou estratégias específicas para ser derrotado.",300,20,20
+Explosivo,imagem_2025-01-24_100220981.png,"Ao ser eliminado, explode, causando dano em área. Pode ser usado de forma estratégica para atingir outros inimigos ou destruir construções.",150,20,10
+Ágil,CerberusRE2.webp,"Zumbis em forma de cães, extremamente rápidos e difíceis de acertar. Representam um grande desafio para a precisão e reflexos do jogador.",50,50,20
+Planta Cospidora,imagem_2025-02-04_123616352.png,"Uma planta mutante que cospe projéteis venenosos contra o jogador, servindo como um inimigo de longo alcance.",70,10,20
+Venenoso,imagem_2025-02-04_123819819.png,"Ao ser eliminado, libera uma nuvem tóxica que envenena o jogador e causa dano a construções próximas.",70,30,20
+Enraizado,imagem_2025-02-04_124004830.png,"Movimenta-se lentamente, mas pode lançar raízes para prender o jogador temporariamente, tornando-o vulnerável a outros ataques.",150,10,20
+Gigante,imagem_2025-01-24_102002332.png,"Uma criatura imensa e extremamente resistente, capaz de causar grandes danos. Exige planejamento e poder de fogo para ser derrotado.",500,10,50
+Lamacento,imagem_2025-05-04_143434559.png,"Uma massa disforme de lama, com olhos brilhantes e um corpo quase líquido. Move-se de forma lenta e ao ser derrotado se divide em 2 versões menores de si mesmo. ",300,20,40
+Minerador,imagem_2025-05-04_143844444.png,"Zombie que era minerador em vida, usa um picareta e surge do chão em locais inesperados. ",50,40,20

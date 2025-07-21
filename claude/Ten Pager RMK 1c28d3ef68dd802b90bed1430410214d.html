@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Ten Pager RMK</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c28d3ef-68dd-802b-90be-d1430410214d" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">✅</span></div><h1 class="page-title">Ten Pager RMK</h1><p class="page-description"></p></header><div class="page-body"><h1 id="1c28d3ef-68dd-805c-98b1-cd7e1e5e2f1c" class=""><mark class="highlight-blue"><strong>1. Introdução</strong></mark></h1><h2 id="1c28d3ef-68dd-800e-9093-ed492b5c262d" class=""><mark class="highlight-teal"><strong>Overview</strong></mark></h2><p id="1c28d3ef-68dd-8093-972a-e06030c191fc" class=""><strong>Nome do Jogo: </strong>Zombiefactory</p><p id="1c28d3ef-68dd-80d1-beb8-e769f74b44f4" class="">
+</p><p id="1c28d3ef-68dd-8001-b215-c3093ea58a32" class=""><strong>Conceito</strong>: Zombiefactory desafia o jogador a construir e gerenciar uma fábrica em meio a um apocalipse zumbi. Durante o dia, o jogador coleta recursos e aprimora sua base, enquanto à noite se defende de hordas de inimigos utilizando torres automáticas e armamentos diversos. O jogo combina elementos de gestão de recursos, defesa e ação em um ambiente pixel art.<br/><br/></p><p id="1c28d3ef-68dd-802e-92d3-dde8db9ea89a" class=""><strong>Objetivo Geral</strong>: Os jogadores devem sobreviver a 20 noites enfrentando diferentes tipos de inimigos. Durante o dia, exploram e coletam recursos para fortalecer sua fábrica e preparação para os ataques noturnos.</p><p id="1c28d3ef-68dd-8040-84b7-e5dd3240dc75" class="">
+</p><p id="1c28d3ef-68dd-803c-bd22-df7535f9a806" class=""><strong>Diferenciais</strong>:</p><ul id="1c28d3ef-68dd-80aa-98d7-d1fb0f576953" class="bulleted-list"><li style="list-style-type:disc"><strong>Fusão de Tower Defense com Roguelike:</strong> Combina estratégia de defesa com ação frenética em um top-down shooter.</li></ul><ul id="1c28d3ef-68dd-80ba-a2d5-e2ee8ae63abb" class="bulleted-list"><li style="list-style-type:disc"><strong>Habilidades Ápices:</strong> Evoluções significativas dos power-ups padrões, proporcionando novos efeitos e dinâmicas ao combate.</li></ul><h2 id="1c28d3ef-68dd-80d7-a54c-e30e9da82b26" class=""><mark class="highlight-teal"><strong>Resumo Executivo</strong></mark></h2><ul id="1c28d3ef-68dd-809a-aa06-ce45bc1664cf" class="bulleted-list"><li style="list-style-type:disc"><strong>Nome do Jogo:</strong> Zombiefactory</li></ul><ul id="1c28d3ef-68dd-808a-809d-f7e4671b02ea" class="bulleted-list"><li style="list-style-type:disc"><strong>Gênero(s):</strong> Gestão de recursos, Sobrevivência, Ação, Tower Defense, Pixel Art.</li></ul><ul id="1c28d3ef-68dd-808c-ae46-faedbe5b0dbb" class="bulleted-list"><li style="list-style-type:disc"><strong>Tags:</strong> Zombies, Fábrica, Armas, Exploração, Ação, Roguelike.</li></ul><ul id="1c28d3ef-68dd-80bb-897e-c6887a2bd7e1" class="bulleted-list"><li style="list-style-type:disc"><strong>Jogadores:</strong> Single Player, Multiplayer Online.</li></ul><ul id="1c28d3ef-68dd-80a3-8d46-f427b1ce0ab8" class="bulleted-list"><li style="list-style-type:disc"><strong>Idiomas:</strong> Português, Inglês.</li></ul><ul id="1c28d3ef-68dd-8019-a2db-c0118528ad0b" class="bulleted-list"><li style="list-style-type:disc"><strong>Plataformas:</strong> PC (Steam).</li></ul><ul id="1c28d3ef-68dd-806f-bb93-deea0b1ad60c" class="bulleted-list"><li style="list-style-type:disc"><strong>Público-alvo:</strong> Entusiastas de roguelikes, tower defense e jogos de apocalipse zumbi.</li></ul><ul id="1c28d3ef-68dd-807e-bf5d-ee8e32c42fb8" class="bulleted-list"><li style="list-style-type:disc"><strong>Pitch:</strong> Zombiefactory é um jogo de sobrevivência onde o jogador constrói e gerencia uma fábrica, coleta recursos e aprimora defesas para sobreviver a 20 noites contra hordas de zumbis cada vez mais desafiadoras.</li></ul><h2 id="1c28d3ef-68dd-8078-bee7-cd70e3bb6319" class=""><mark class="highlight-teal"><strong>Inspirações</strong></mark></h2><p id="1c28d3ef-68dd-8047-be59-c7568b81e01f" class=""><strong>Don&#x27;t Starve Together</strong>: </p><ul id="1c28d3ef-68dd-809d-8ddf-f1264194d6a4" class="bulleted-list"><li style="list-style-type:disc">Exploração e sobrevivência bem implementadas.</li></ul><ul id="1c28d3ef-68dd-80db-8ef5-e91be43dee74" class="bulleted-list"><li style="list-style-type:disc">Estética sombria e alinhada com um mundo pós-apocalíptico.</li></ul><figure id="1c28d3ef-68dd-8059-ae19-cabc99f79425" class="image" style="text-align:left"><a href="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeewPCg4kXXFth9QQxlpT81ZFPVh8r7QLNLqCB5VE6FSSNm9nV_uB988taU3YK4p1BQTuRcSzH6o5fH3AXjHOPrak1pE74yHVuWiGiZjHl_kpMVohxslXAPp6UO5j01v0pAc5F64kj-1IiNblRJtlNFtwo?key=N0b95GFWVycP6F0zxcgeNw"><img style="width:336px" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeewPCg4kXXFth9QQxlpT81ZFPVh8r7QLNLqCB5VE6FSSNm9nV_uB988taU3YK4p1BQTuRcSzH6o5fH3AXjHOPrak1pE74yHVuWiGiZjHl_kpMVohxslXAPp6UO5j01v0pAc5F64kj-1IiNblRJtlNFtwo?key=N0b95GFWVycP6F0zxcgeNw"/></a></figure><p id="1c28d3ef-68dd-8083-b454-f766f32bff5e" class=""><strong>Plantas vs. Zombies</strong>:</p><ul id="1c28d3ef-68dd-80e8-8e55-d5edad3106a6" class="bulleted-list"><li style="list-style-type:disc">Ambientação e humor característicos.</li></ul><ul id="1c28d3ef-68dd-8039-904a-feaf02dc9dc7" class="bulleted-list"><li style="list-style-type:disc">Cenários diversificados, incluindo jardins e cemitérios, semelhantes aos do jogo.</li></ul><figure id="1c28d3ef-68dd-80f0-811d-efa313f1d906" class="image" style="text-align:left"><a href="image.png"><img style="width:336px" src="image.png"/></a></figure><p id="1c28d3ef-68dd-80e3-8f58-e21cc1b0766a" class=""><strong>Bloons TD 5</strong>:</p><ul id="1c28d3ef-68dd-8046-9cc1-f0953cc61dd1" class="bulleted-list"><li style="list-style-type:disc">Exemplo moderno de tower defense.</li></ul><ul id="1c28d3ef-68dd-80b0-8e6e-ef433dd6442a" class="bulleted-list"><li style="list-style-type:disc">Possibilidade de posicionar &quot;torres&quot; estrategicamente para repelir inimigos.</li></ul><figure id="1c28d3ef-68dd-80c6-8f88-d9898fcc8fb0" class="image" style="text-align:left"><a href="image%201.png"><img style="width:336px" src="image%201.png"/></a></figure><h1 id="1c28d3ef-68dd-80eb-b3a8-e521737d8bed" class=""><mark class="highlight-blue"><strong>2. Descrição</strong></mark></h1><h2 id="1c28d3ef-68dd-80e7-b297-fdce6e24dbc3" class=""><mark class="highlight-teal"><strong>História e Enredo</strong></mark></h2><p id="1c28d3ef-68dd-8040-b3f5-c2ce1868a2e2" class=""><strong>Contexto</strong>:<strong> </strong>Em um futuro distante, o mundo está infestado por zumbis que ameaçam a vida na Terra. Como especialista em sobrevivência seu trabalho é encontrar áreas isoladas e transformá-las em locais seguros. Para isso, você constrói e gerencia uma fábrica que produz itens essenciais para a sobrevivência e torres de defesa para limpar as áreas de zumbis.</p><figure id="1c38d3ef-68dd-80c2-90a7-c77c393fc3dd" class="image" style="text-align:left"><a href="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfG8InEU4_1VXFDw3KAbIuzM5bL2e6PMLkJbC8p7y2P_rHxG9Rx31MkFsWbOFFhnd9ReAAojZoIF_bng_LF02Dlh3HmIkdXSWRyTDLrOx6mPBzm0MB9JY3tN24eDoCvrlmc2nH5RV464wD3vCS8Jj7D5xM?key=N0b95GFWVycP6F0zxcgeNw"><img style="width:432px" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfG8InEU4_1VXFDw3KAbIuzM5bL2e6PMLkJbC8p7y2P_rHxG9Rx31MkFsWbOFFhnd9ReAAojZoIF_bng_LF02Dlh3HmIkdXSWRyTDLrOx6mPBzm0MB9JY3tN24eDoCvrlmc2nH5RV464wD3vCS8Jj7D5xM?key=N0b95GFWVycP6F0zxcgeNw"/></a></figure><p id="1c28d3ef-68dd-807d-8845-e0b4d16515e9" class=""><strong>Enredo Principal</strong>:<strong> </strong>Ao chegar a uma nova área, você tem 20 dias para estabelecer uma base segura antes que a infestação atinja um ponto crítico. Começando por um jardim abandonado e depois avançando para um antigo cemitério, cada ambiente traz desafios únicos. Sua fábrica será a chave para a sobrevivência, produzindo suprimentos, construindo torres e gerenciando recursos enquanto hordas de zumbis tentam destruir tudo. Durante o dia, colete materiais, expanda sua base e prepare suas defesas. À noite, enfrente ondas de inimigos cada vez mais perigosos, utilizando torres automáticas, armas e aprimoramentos obtidos ao longo do caminho.</p><p id="1c28d3ef-68dd-808f-a4b3-d96ae8aadac3" class=""><strong>Personagens:</strong></p><ul id="1c28d3ef-68dd-80d8-8494-c9d87d6cc080" class="bulleted-list"><li style="list-style-type:disc"><strong>O Sobrevivente (Protagonista)</strong>: O jogador pode escolher entre diferentes classes de sobreviventes, cada um com habilidades e estilos de jogo distintos. Essas classes definem sua abordagem para a exploração, defesa e combate.<figure id="1c38d3ef-68dd-804e-af7c-ed59b3ae77d2" class="image"><a href="image%202.png"><img style="width:413.0000305175781px" src="image%202.png"/></a></figure></li></ul><ul id="1c48d3ef-68dd-8048-b91f-da9661140ae6" class="bulleted-list"><li style="list-style-type:disc"><strong>Zombies</strong>: Os zombies são os principais antagonista do jogo, de dia poucos aparecem porém anoite eles ficam muito mais ativos, e é nesse momento que invadem em grandes números.</li></ul><ul id="1c28d3ef-68dd-80d3-846d-f1eb5efe2538" class="bulleted-list"><li style="list-style-type:disc"><strong>Comerciantes Misteriosos</strong>: Dois estranhos sempre aparecem juntos, cobertos por grandes mantos escuros. Apesar de viajarem lado a lado, cada um oferece mercadorias únicas e tem interesses próprios. Suas motivações permanecem obscuras, mas sempre trazem algo valioso para a sobrevivência.<figure id="1c38d3ef-68dd-8052-84df-cb23634bced3" class="image"><a href="image%203.png"><img style="width:144px" src="image%203.png"/></a></figure></li></ul><ul id="1c28d3ef-68dd-8094-a884-ee8a13c2ee68" class="bulleted-list"><li style="list-style-type:disc"><strong>NPCs e Missões</strong>: Durante o jogo, sobreviventes dispersos podem surgir com pedidos específicos, como fornecer materiais ou eliminar zumbis de formas estratégicas.</li></ul><p id="1c28d3ef-68dd-8070-8712-f50b99106aef" class="">
+</p><p id="1c28d3ef-68dd-8096-a3cd-f2d4c6172175" class=""><strong>Missão Principal</strong>: Transforme locais devastados em fortalezas seguras. Utilize sua fábrica para produzir recursos, desenvolver defesas e resistir a 20 noites de ataques zumbis. Cada novo território apresenta desafios únicos, exigindo estratégia e adaptação para sobreviver.</p><p id="1c28d3ef-68dd-8026-83a7-f214dc248daa" class="">
+</p><p id="1c28d3ef-68dd-8019-8128-dd0a352c8467" class=""><strong>Atmosfera Geral</strong>:<strong> </strong>A ambientação de <em>Zombiefactory</em> combina o terror constante do apocalipse com a esperança de reconstrução. O design visual reflete essa dualidade: áreas destruídas e escuras são gradualmente restauradas conforme o jogador constrói sua base. O som contribui para essa imersão, com músicas tensas durante os ataques e melodias mais sutis durante o gerenciamento diurno, reforçando a sensação de perigo iminente e progresso contínuo. </p><h1 id="1c28d3ef-68dd-80c8-accf-c7ce513fd3c6" class=""><mark class="highlight-blue"><strong>3. Pilares de Design</strong></mark></h1><p id="1c28d3ef-68dd-804a-8928-e8a49e9a3336" class="">O jogo se baseia em três pilares fundamentais, do mais importante para o menos.</p><ol type="1" id="1c38d3ef-68dd-80dc-a657-d5b3940117c1" class="numbered-list" start="1"><li><strong>Gestão de Recursos e Construção</strong>: Não basta apenas ser habilidoso no combate, o jogador precisa gerenciar eficientemente seus recursos para melhorar sua fábrica e defesas.</li></ol><ol type="1" id="1c38d3ef-68dd-802e-afcc-ee3215d34d25" class="numbered-list" start="2"><li><strong>Combate e Sobrevivência</strong>: Aqui, o foco está em proteger o que já foi construído e sobreviver aos ataques evitando morrer. O jogador enfrenta hordas de zumbis e defende sua fábrica, sendo crucial para sobreviver ao apocalipse e progredir no jogo.</li></ol><ol type="1" id="1c38d3ef-68dd-8030-97e7-e91348a63ff3" class="numbered-list" start="3"><li><strong>Power Ups</strong>: Há uma grande variedade de power-ups disponíveis, permitindo ao jogador criar combinações estratégicas para potencializar suas habilidades. Escolher power-ups que se complementam é essencial para maximizar a eficácia no combate.</li></ol><h1 id="1c28d3ef-68dd-803e-b9ac-d64d9fdad958" class=""><mark class="highlight-blue">4. Jogabilidade</mark></h1><h2 id="1c28d3ef-68dd-8044-a426-eec4337efb6f" class=""><mark class="highlight-teal"><strong>Mecânicas de Jogo</strong></mark></h2><h3 id="1c28d3ef-68dd-8083-9fcc-c448238c699b" class=""><strong>Jogador</strong></h3><ul id="1c38d3ef-68dd-806b-84e2-e6b1d6725f8e" class="bulleted-list"><li style="list-style-type:disc"><strong>Movimentação</strong>: Movimento livre para 8 direções.<strong> </strong></li></ul><ul id="1c38d3ef-68dd-8097-a17c-cd5d47db7675" class="bulleted-list"><li style="list-style-type:disc"><strong>Correr</strong>: Correr aumenta a velocidade de movimento do jogador em troca de estamina, enquanto corre o jogador ainda pode realizar todas as ações.</li></ul><ul id="1c38d3ef-68dd-802e-9dc2-fda775126150" class="bulleted-list"><li style="list-style-type:disc"><strong>Equipar / Trocar de armas: </strong>O jogador pode carregar duas armas e alterar entre elas a qualquer momento.<strong> </strong></li></ul><ul id="1c38d3ef-68dd-8072-a8f0-e48259a87240" class="bulleted-list"><li style="list-style-type:disc"><strong>Usar armas</strong>: Cada arma possui um funcionamento, porém o objetivo de todas é derrotar zombies. </li></ul><ul id="1c38d3ef-68dd-80e2-a7f3-dfc6af51b2ab" class="bulleted-list"><li style="list-style-type:disc"><strong>Recarregar Munição</strong>: Armas de fogo precisam de munição, e também é necessário recarregá-las caso o pente descarregue, essa ação leva tempo.</li></ul><ul id="1c28d3ef-68dd-8074-8b91-e829097c0b8f" class="bulleted-list"><li style="list-style-type:disc"><strong>Construir e Remover</strong>: Dentro da fábrica o jogador pode construir torres e construções, e também vende-las.</li></ul><ul id="1c28d3ef-68dd-801c-9a5d-fa9b8323aa56" class="bulleted-list"><li style="list-style-type:disc"><strong>Interagir</strong>: É possível interagir com diversos objetos como totens de venda, baús e NPCs.<strong> </strong></li></ul><ul id="1c38d3ef-68dd-8063-9c43-feb0863c7eb7" class="bulleted-list"><li style="list-style-type:disc"><strong>Morrer e Renascer</strong>: O jogador só perde quando o núcleo da fábrica é destruído, portanto ao morrer ele sofre uma penalidade e volta ao jogo.  </li></ul><h3 id="1c38d3ef-68dd-8010-8fc0-fb1bc9e50a06" class="">Fábrica</h3><ul id="1c28d3ef-68dd-8093-9bec-fbd2cce1bf51" class="bulleted-list"><li style="list-style-type:disc"><strong>Núcleo</strong>: O núcleo da fábrica define qual é a área dela e deve ser defendido a todo custo, caso ele seja destruído o jogador perde a partida.</li></ul><ul id="1c38d3ef-68dd-809b-b2f1-c9afcec88039" class="bulleted-list"><li style="list-style-type:disc"><strong>Torres</strong>: Dentro da área da fábrica o jogador pode construir torres de defesa que atiram automaticamente em inimigos dentro de seu alcance. Existem vários tipos diferentes de torres cada uma com suas particularidades.</li></ul><ul id="1c38d3ef-68dd-8016-b13c-f57820220a98" class="bulleted-list"><li style="list-style-type:disc"><strong>Produção de Recursos</strong>: Ainda dentro da fábrica o jogador pode construir coletores e refinadores que coletam e tratam materiais que podem ser vendidos.</li></ul><ul id="1c38d3ef-68dd-80c2-9b85-d02628ec6af0" class="bulleted-list"><li style="list-style-type:disc"><strong>NPCs</strong>: Durante o dia, alguns NPCs surgem na fábrica, podendo oferecer dicas, trocas, missões. </li></ul><h3 id="1c38d3ef-68dd-8051-9644-f43612438ba2" class="">Exploração</h3><p id="1c38d3ef-68dd-80a7-8e09-d17c829e88a7" class=""><strong>Áreas Hostis</strong>: Durante a exploração o jogador pode encontrar áreas dominadas por zombies porém sempre com um baú que pode lhe render boas recompensas. </p><p id="1c38d3ef-68dd-806a-b1a5-ed63b549766c" class=""><strong>Afloramentos Rochosos</strong>: Afloramentos rochosos fornecem materiais quando são destruídos. O jogador pode destrui-los causando dano com armas. </p><p id="1c38d3ef-68dd-806b-bb72-ea9bfbd66737" class=""><strong>Baús</strong>: O jogador pode encontrar baús sozinhos ou em dentro de áreas hostis, eles possuem recompensas como dinheiro, materiais, experiencia ou power ups.</p><h2 id="1c38d3ef-68dd-8010-9cc0-ef202aaa2fa9" class=""><mark class="highlight-teal">Sistemas</mark></h2><p id="1c38d3ef-68dd-8018-8904-ed6a4051f7eb" class=""><strong>Level e Experiência</strong>: Ao derrotar inimigos o jogador ganha experiencia que se convertem em levels. Sempre que o jogador sobe de level, ele recebe um power up. </p><p id="1c38d3ef-68dd-80e6-9aa5-dfe26779b334" class=""><strong>Power Ups</strong>: Power ups fornecem ao jogador habilidades e melhorias novas que podem ajuda-lo, em combate, exploração e sobrevivência. </p><p id="1c38d3ef-68dd-801a-a418-e3fa7474ddcb" class=""><strong>Ciclo de dia e Noite</strong>: O jogo tem um tempo que passa constantemente das 6h00 - 18h00 é dia, enquanto todo resto é noite. Durante o dia o mapa tem muito menos zombies e durante a noite os zombies atacam a fábrica. Todo dia as 6h00 é contado como mais uma noite completa, ao completar 20 noites o jogador completa a tentativa. </p><p id="1c38d3ef-68dd-80a9-baff-cc401f8f78dc" class=""><strong>Missões</strong>: NPCs oferecem missões ao jogador podendo ser de entrega de materiais ou matar uma quantidade especifica de inimigos de maneiras especificas.</p><p id="1c38d3ef-68dd-8044-a721-e4f8440169fd" class=""><strong>Loja</strong>: Os vendedores colocam tokens para comprar materiais do jogador e também para vender itens como artefatos, armas e munição.  </p><p id="1c38d3ef-68dd-80d1-a589-dd3d0d5ef48c" class=""><strong>Diálogo</strong>: O jogo conta com um sistema simples de diálogos principalmente para as interações entre o jogador e NPCs.</p><p id="1c38d3ef-68dd-80d3-9f56-ed04c704a1c2" class=""><strong>Eventos Aleatório</strong>: O jogo também conta com alguns eventos aleatórios que testam os reflexos do jogador como uma horda de zombies atacando durante o dia, ou uma anomalia que faz com que mais zombies especiais apareçam por exemplo.</p><p id="1c48d3ef-68dd-80bb-8343-c3f247a296a6" class=""><strong>Notificações</strong>: Sistema que avisa o jogador sobre eventos do jogo como o inicio e fim da noite ou algum evento aleatório.</p><h2 id="1c28d3ef-68dd-80c3-a9d8-d8bbc2b958e4" class=""><mark class="highlight-teal"><strong>Níveis e Missões</strong></mark></h2><h3 id="1c28d3ef-68dd-809f-bef3-c21c60cb65f8" class=""><strong>Estrutura dos Níveis</strong></h3><ul id="1c48d3ef-68dd-8044-8120-f45d2562b0f7" class="bulleted-list"><li style="list-style-type:disc"><strong>Modo de Jogo</strong>: O jogo conta com diferentes modos de jogo, o single player e multiplayer onde em ambos modos o jogador deve sobreviver a 20 rodadas, e o modo infinito que não existe limite de rodadas. </li></ul><ul id="1c38d3ef-68dd-8045-a3e7-c94687c5d2c3" class="bulleted-list"><li style="list-style-type:disc">Noites: Dentro do jogo cada rodada funciona como 24hrs sobrevividas, ou mais especificamente uma noite sobrevivida, começando pela rodada 1, a cada rodada o jogo fica mais difícil. </li></ul><ul id="1c48d3ef-68dd-80c7-a102-f6b7ed740662" class="bulleted-list"><li style="list-style-type:disc"><strong>Dificuldade</strong>: Existem 2 mapas que também vão definir o desafio para o jogador, sendo eles o Jardim Esquecido e o Cemitério dos Perdidos, cada um deles tem zombies específicos. </li></ul><p id="1c38d3ef-68dd-8018-a04e-da6e84c894e4" class=""><strong>Objetivos de Missão:</strong></p><ul id="1c38d3ef-68dd-80cd-afa9-c50fbefb5ffc" class="bulleted-list"><li style="list-style-type:disc"><strong>Missão Principal:</strong> O objetivo do jogador é sobreviver 20 noites sem deixar com que os zombies destruam o núcleo da fábrica.</li></ul><ul id="1c38d3ef-68dd-80c9-8c80-f137616ce44a" class="bulleted-list"><li style="list-style-type:disc"><strong>Missões Secundárias:</strong> Explorar o mundo além da fábrica atras de recursos, melhorar a fábrica e suas defesas, comprar armas e equipamentos, completar missões para NPCs em troca de recompensas, ganhar experiencia e evoluir o personagem.</li></ul><h2 id="1c28d3ef-68dd-8049-9559-f91f36f59446" class=""><mark class="highlight-teal"><strong>Desafios e Obstáculos</strong></mark></h2><ul id="1c48d3ef-68dd-80c8-8b12-d787e8271b2c" class="bulleted-list"><li style="list-style-type:disc"><strong>Infestações Zombies:</strong> Zombies aparecem em grandes quantidades e também em diferentes formas e comportamentos, exigindo estratégias variadas para a defesa e eliminação eficaz.</li></ul><ul id="1c48d3ef-68dd-80bc-bfdc-e99289734482" class="bulleted-list"><li style="list-style-type:disc"><strong>Gerenciamento da Fábrica</strong>: O gerenciamento da fábrica é importante para a sobrevivência, desperdiçar dinheiro e não investir em defesas da fábrica pode significar a derrota. </li></ul><ul id="1c28d3ef-68dd-804e-8b6a-e6b91f38ab0a" class="bulleted-list"><li style="list-style-type:disc"><strong>Áreas Hostis:</strong> Cada local apresenta desafios ambientais, como vinhas espinhosas, os zumbis escapando de lápides dentro da base, que afetam a produção e a defesa.</li></ul><h1 id="1c28d3ef-68dd-80f6-9ca0-c7511e51c871" class=""><mark class="highlight-blue"><strong>5. Design de Personagens e Inimigos</strong></mark></h1><h2 id="1c28d3ef-68dd-80df-92fd-eba63805cb2f" class=""><mark class="highlight-teal">Protagonista</mark></h2><h3 id="1c48d3ef-68dd-8055-8d36-c1201e0daa61" class="">Definição</h3><p id="1c48d3ef-68dd-80ea-b391-c624a27f75fa" class="">O protagonista é um especialista em sobrevivência, encarregado de transformar locais antes hostis em habitáveis novamente. Ele é responsável pela construção e gerenciamento da fábrica e pela defesa contra zumbis.</p><h3 id="1c48d3ef-68dd-80fc-a70a-c310e1a0a3ab" class="">Classes</h3><p id="1c48d3ef-68dd-80d7-9bef-e7e805d0d0bc" class="">Existem 8 classes diferentes, cada uma com atributos variados, aparência, e com uma passiva única:</p><ul id="1c48d3ef-68dd-80e7-8355-f50298cdf73a" class="bulleted-list"><li style="list-style-type:disc"><strong>Demolidor</strong>: Alto dano base e equilíbrio geral. <strong>Passiva</strong>: Aumenta o dano de torres próximas. <strong>Aparência</strong>: Óculos maneiros.</li></ul><ul id="1c48d3ef-68dd-8074-8ee4-c5b9f6836647" class="bulleted-list"><li style="list-style-type:disc"><strong>Engenheiro</strong>: Alta recarga e resistência, mas menor dano bruto. <strong>Passiva</strong>: Recarregar no tempo certo concede balas extras. <strong>Aparência</strong>: Capacete de obra.</li></ul><ul id="1c48d3ef-68dd-80f2-8954-d7628c76be63" class="bulleted-list"><li style="list-style-type:disc"><strong>Explorador</strong>: Rápido e com regeneração passiva. <strong>Passiva</strong>: Aumenta o raio e a quantidade de itens coletados. <strong>Aparência</strong>: Mochila de acampamento.</li></ul><ul id="1c48d3ef-68dd-808b-967f-e75f067964d1" class="bulleted-list"><li style="list-style-type:disc"><strong>Assassino</strong>: Ágil, alto dano e crítico, mas frágil. <strong>Passiva</strong>: Primeiro ataque em um inimigo causa dano dobrado. <strong>Aparência</strong>: Jaqueta preta com touca.</li></ul><ul id="1c48d3ef-68dd-80b8-94cd-cd771d142129" class="bulleted-list"><li style="list-style-type:disc"><strong>Colosso</strong>: Tanque com alta vida e regeneração, mas baixo dano. <strong>Passiva</strong>: Regeneração contínua. <strong>Aparência</strong>: Grande e robusto.</li></ul><ul id="1c48d3ef-68dd-8064-a4c8-fcff8dfc5d78" class="bulleted-list"><li style="list-style-type:disc"><strong>Armeiro</strong>: Versátil, com boas taxas de dano e cadência. <strong>Passiva</strong>: Carrega duas armas principais. <strong>Aparência</strong>: Roupa camuflada.</li></ul><ul id="1c48d3ef-68dd-802c-93e7-d1aebd34a833" class="bulleted-list"><li style="list-style-type:disc"><strong>Corredor</strong>: Extremamente ágil e resistente. <strong>Passiva</strong>: Correndo por 2s, ganha bônus de velocidade. <strong>Aparência</strong>: Roupa esportiva e faixa na testa.</li></ul><ul id="1c48d3ef-68dd-804b-a3cf-cda03fb6b95e" class="bulleted-list"><li style="list-style-type:disc"><strong>Imortal</strong>: Altamente resistente, regenera vida. <strong>Passiva</strong>: Revive com 25% de vida após cair (tempo de recarga). <strong>Aparência</strong>: Armadura.</li></ul><h2 id="1c48d3ef-68dd-8039-b05d-ee532ad12814" class=""><mark class="highlight-teal">Zombies</mark></h2><p id="1c48d3ef-68dd-806e-804d-c8a010e8b3a9" class="">Existem vários tipos de zombies diferentes sendo eles:</p><ul id="1c48d3ef-68dd-8023-b8f8-da948f9c4318" class="bulleted-list"><li style="list-style-type:disc"><strong>Comum</strong>: Um zumbi padrão, sem características especiais.</li></ul><ul id="1c48d3ef-68dd-8036-8b4b-f26e0a076d39" class="bulleted-list"><li style="list-style-type:disc"><strong>Blindado</strong>: Usa roupas de tropa de choque, com proteção pesada.</li></ul><ul id="1c48d3ef-68dd-801b-8c8e-ca1e46aef37c" class="bulleted-list"><li style="list-style-type:disc"><strong>Explosivo</strong>: Inchado e inflado da cintura para cima, prestes a explodir.</li></ul><ul id="1c48d3ef-68dd-8012-92c3-d2e17a15b7a8" class="bulleted-list"><li style="list-style-type:disc"><strong>Ágil</strong>: Um zumbi canino, rápido e feroz.</li></ul><ul id="1c48d3ef-68dd-80e5-ab01-ceffa296d5ca" class="bulleted-list"><li style="list-style-type:disc"><strong>Planta Cospidora</strong>: Uma planta zumbi com aparência mutante.</li></ul><ul id="1c48d3ef-68dd-80f6-a11f-cbf6ebbf942a" class="bulleted-list"><li style="list-style-type:disc"><strong>Venenoso</strong>: Se assemelha aos infectados de <em>The Last of Us</em>, com crescimento fúngico.</li></ul><ul id="1c48d3ef-68dd-8046-8091-ff11ea825d38" class="bulleted-list"><li style="list-style-type:disc"><strong>Enraizado</strong>: Possui raízes que se espalham pelo chão.</li></ul><ul id="1c48d3ef-68dd-80cd-996c-d765b651267e" class="bulleted-list"><li style="list-style-type:disc"><strong>Gigante</strong>: Enorme e imponente, com resistência elevada.</li></ul><ul id="1c48d3ef-68dd-801f-a30d-ef12fa988584" class="bulleted-list"><li style="list-style-type:disc"><strong>Translúcido</strong>: Quase invisível, difícil de detectar.</li></ul><ul id="1c48d3ef-68dd-8016-86f2-e1fe2570205f" class="bulleted-list"><li style="list-style-type:disc"><strong>Gélido</strong>: Tem pele azulada e aparência congelada.</li></ul><ul id="1c48d3ef-68dd-80ba-a9b2-e1981906cc3e" class="bulleted-list"><li style="list-style-type:disc"><strong>Partido</strong>: Alto e magro, divide-se em duas partes ao ser derrotado.</li></ul><ul id="1c48d3ef-68dd-80bc-9505-fb22b0c1e361" class="bulleted-list"><li style="list-style-type:disc"><strong>Regenerativo</strong>: Inteiramente vermelho, como carne viva.</li></ul><ul id="1c48d3ef-68dd-80bc-9ecf-ff48e1eb1755" class="bulleted-list"><li style="list-style-type:disc"><strong>Carniçal</strong>: Lembra os Lickers de <em>Resident Evil</em>, são fortes e se fortalecem consumindo outros zombies fracos.</li></ul><ul id="1c48d3ef-68dd-80a8-8845-cbbf923c89e8" class="bulleted-list"><li style="list-style-type:disc"><strong>Executor</strong>: Um brutamontes semelhante ao Nemesis de <em>Resident Evil</em>, imponente e armado.</li></ul><h2 id="1c48d3ef-68dd-8050-bbf1-dd5fdd0b881a" class=""><mark class="highlight-teal">NPCs</mark></h2><p id="1c48d3ef-68dd-803f-b7da-d1a647548aad" class=""><strong>Descrição:</strong> Periodicamente sobreviventes e viajantes passam pela fábrica, sempre com algum pedido ao jogador. Ele pode recusar missões, porém completar missões secundárias é uma ótima forma de conseguir recursos importantes para sobreviver todas as 20 noites.</p><ul id="1c48d3ef-68dd-80e3-85c0-ca89d66988d2" class="bulleted-list"><li style="list-style-type:disc"><strong>Sobreviventes</strong>: Sujos, descabelados e com roupas rasgadas.</li></ul><ul id="1c48d3ef-68dd-807c-8733-d7b515700e46" class="bulleted-list"><li style="list-style-type:disc"><strong>Militares</strong>: Vestem uniformes táticos.</li></ul><ul id="1c48d3ef-68dd-80eb-927b-edeaec50327d" class="bulleted-list"><li style="list-style-type:disc"><strong>Médicos</strong>: Usam jalecos ou trajes hospitalares.</li></ul><ul id="1c48d3ef-68dd-8048-a6ac-cc89dc5720ae" class="bulleted-list"><li style="list-style-type:disc"><strong>Cientistas</strong>: Vestem jalecos brancos, muitas vezes rasgados e sujos.</li></ul><h1 id="1c28d3ef-68dd-80d9-86b8-d5bb14cb6ee4" class=""><mark class="highlight-blue"><strong>6. Design de Níveis e Ambiente</strong></mark></h1><h2 id="1c28d3ef-68dd-80ce-81da-f9e90ce1e5f2" class=""><mark class="highlight-teal"><strong>Mapas e Layouts</strong></mark></h2><p id="1c48d3ef-68dd-804c-af2a-f32b17746349" class=""><strong>Jardim Esquecido:</strong> Com dificuldade normal, o Jardim é era local antes vivo e cheio de cor, agora dominado por uma flora mutante e vegetação densa. O ambiente é tomado por tons verdes, vermelhos e marrons, com elementos naturais em estado de degradação. As criaturas que habitam o Jardim oferecem um perigo moderado.</p><figure id="1c48d3ef-68dd-8092-bd00-d02fb360791b" class="image" style="text-align:left"><a href="image%204.png"><img style="width:336px" src="image%204.png"/></a></figure><p id="1c48d3ef-68dd-8039-a0c4-f41a007d464f" class=""><strong>Cemitério dos Perdidos:</strong> Com dificuldade elevada o cemitério é um lugar antigo e misterioso, envolto por neblina densa e sombras inquietantes. A paleta de cores é dominada por tons escuros e frios, com nuances de púrpura e cinza. As criaturas do cemitério oferecem um desafio elevado.</p><figure id="1c48d3ef-68dd-804a-8803-c08206e65742" class="image" style="text-align:left"><a href="image%205.png"><img style="width:336px" src="image%205.png"/></a></figure><h2 id="1c48d3ef-68dd-805f-9ca6-f66ac9ab8219" class=""><mark class="highlight-teal">Ambiente Vivo</mark></h2><p id="1c48d3ef-68dd-8014-82d8-ee9c1bf9bc0e" class=""><strong>Personagens</strong>: Com o passar dos dias, novas figuras começam a surgir na fábrica, como NPCs e comerciantes, fazendo com que o jogador tenha a sensação de que o mundo do jogo é vivo mesmo em um apocalipse é possível ver sobreviventes andando pela fábrica. </p><p id="1c48d3ef-68dd-80f0-9511-e8d8df370568" class=""><strong>Eventos Aleatórios: </strong> Tempestades, ataques surpresa de zumbis, ou falhas na fábrica podem ocorrer sem avisos prévios, modificando a paisagem e muitas vezes a atmosfera, um dia tranquilo e ensolarado pode facilmente se tornar um dia tenso de incerteza por causa de um possível ataque surpresa. </p><h1 id="1c28d3ef-68dd-8057-a53a-ed8aa9d433b5" class=""><mark class="highlight-blue"><strong>7. Aspectos Visuais e Auditivos</strong></mark></h1><h2 id="1c48d3ef-68dd-80c5-a4b0-c4843170fe5c" class=""><mark class="highlight-teal"><strong>Estilo Artístico</strong></mark></h2><p id="1c48d3ef-68dd-80d2-951f-ee25ddf53368" class="">O jogo tem pixel art detalhada com visão top-down, misturando tons desbotados e toques de neon para contrastar ruínas e tecnologia decadente. A vibe é sombria, mas com pontos de cor que reforçam a ambientação pós-apocalíptica.</p><figure id="1c48d3ef-68dd-80fc-bc01-d9608e393094" class="image" style="text-align:left"><a href="image%206.png"><img style="width:336px" src="image%206.png"/></a></figure><p id="1c48d3ef-68dd-80a9-a475-e63afe4cc379" class="">Cenários combinam estruturas destruídas e vegetação tomando conta, criando um mundo que tenta se reerguer. As animações são ágeis e impactantes, com tiros, explosões e golpes bem marcados. Cada inimigo tem um visual único para facilitar a leitura do combate.</p><h2 id="1c48d3ef-68dd-8031-abb4-c51c67d2a3c5" class=""><mark class="highlight-teal"><strong>Áudio</strong></mark></h2><p id="1c48d3ef-68dd-8017-bf82-d2a154236785" class="">A trilha sonora mistura sintetizadores pesados, batidas industriais e guitarras distorcidas, alternando entre tensão e adrenalina. Exploração tem músicas sutis e atmosféricas; batalhas trazem ritmos frenéticos no estilo <em>Doom Eternal</em> e <em>Hades</em>.</p><p id="1c48d3ef-68dd-801f-a31a-e0e829a42028" class="">Referência:  <a href="https://www.youtube.com/watch?v=3GRKJ87S5cI">https://www.youtube.com/watch?v=3GRKJ87S5cI</a></p><p id="1c48d3ef-68dd-8031-831b-e2fcb90690dd" class="">
+</p><p id="1c48d3ef-68dd-807d-89a3-e8b70612849d" class="">Efeitos sonoros são pesados e satisfatórios. Disparos, recargas, explosões e sons dos inimigos são distintos e reforçam a imersão. O mundo vivo se manifesta em ruídos ambientes como vento, metal rangendo e ecos distantes, aumentando a sensação de isolamento e perigo.</p><h1 id="1c28d3ef-68dd-809f-96b3-c01da1db34b3" class=""><mark class="highlight-blue"><strong>8. Progressão</strong></mark></h1><p id="1c48d3ef-68dd-8001-bde6-c4a062a9d6ae" class="">Este tópico descreve como a progressão do jogo ocorre, abordando desde a coleta de recursos até as habilidades que o jogador desenvolve, passando pelos desafios diários e pela evolução do jogo ao longo das 20 noites.</p><h2 id="1c48d3ef-68dd-8081-a8ac-d1954d247ec8" class=""><mark class="highlight-teal"><strong>Ciclo de Sobrevivência (20 Noites)</strong></mark></h2><p id="1c48d3ef-68dd-8027-85f4-c061e5d1a546" class="">O jogo se divide em 20 noites crescentes de dificuldade. Durante o <strong>dia</strong>, o jogador coleta recursos, melhora a fábrica, constrói defesas e se prepara. Quando a <strong>noite</strong> chega, hordas de zumbis atacam, e o jogador deve defender a base com torres e armas.</p><h2 id="1c48d3ef-68dd-8072-844b-e90475f7f972" class=""><mark class="highlight-teal"><strong>XP, Níveis e Habilidades</strong></mark></h2><p id="1c48d3ef-68dd-80e6-b446-cdca63b2a8a0" class="">Ao eliminar zumbis, completar missões e sobreviver às noites, o jogador ganha XP. Esse XP é usado para evoluir o personagem e desbloquear <strong>power-ups</strong>, que permitem melhorar habilidades de combate, defesa, construção e exploração.</p><ul id="1c48d3ef-68dd-8058-82d9-dbbe53f089b1" class="bulleted-list"><li style="list-style-type:disc"><strong>Combate e Defesa</strong>: Aumenta o poder de fogo e a eficácia das torres.</li></ul><ul id="1c48d3ef-68dd-80aa-bc2a-c657b3d4c849" class="bulleted-list"><li style="list-style-type:disc"><strong>Construção e Gerenciamento</strong>: Acelera a produção e melhora a fábrica.</li></ul><ul id="1c48d3ef-68dd-80c6-96ad-eda58e9b2284" class="bulleted-list"><li style="list-style-type:disc"><strong>Exploração</strong>: Melhora a coleta de recursos e a navegação pelas áreas.</li></ul><h2 id="1c48d3ef-68dd-8067-9cd1-ffaaf05f42af" class=""><mark class="highlight-teal"><strong>Escalada de Dificuldade e Novos Desafios</strong></mark></h2><p id="1c48d3ef-68dd-8039-af1d-cb5c63330eea" class="">A cada ciclo de 5 noites, a dificuldade aumenta, com novos inimigos e eventos. O jogador também desbloqueia novas torres e armas à medida que avança, o que oferece mais opções estratégicas para se defender das hordas.</p><h2 id="1c48d3ef-68dd-80f5-9397-dbeea992c5e6" class=""><mark class="highlight-teal"><strong>Cenários e Eventos Aleatórios</strong></mark></h2><p id="1c48d3ef-68dd-80d6-86cc-e72441ca08df" class="">O jogo apresenta dois cenários principais: <strong>Jardim Esquecido</strong> e <strong>Cemitério dos Perdidos</strong>, cada um com desafios próprios, como flora mutante e neblina densa. Além disso, o jogador enfrenta eventos imprevisíveis, como tempestades e falhas na fábrica, que exigem adaptações rápidas nas estratégias.</p><h2 id="1c48d3ef-68dd-806e-8fb3-f85d3fb2d541" class=""><mark class="highlight-teal"><strong>Finalização e Recompensas</strong></mark></h2><p id="1c48d3ef-68dd-806d-a649-f0abc7126eba" class="">Ao completar as 20 noites, o jogador limpa a área e transforma o ambiente, desbloqueando novas áreas e desafios. A progressão também oferece recompensas exclusivas, como gemas raras e upgrades permanentes. O jogo termina se o núcleo da fábrica for destruído.</p><h1 id="1c28d3ef-68dd-8053-9fea-d89650cccd39" class=""><mark class="highlight-blue"><strong>9. Interface do Usuário</strong></mark></h1><h2 id="1c28d3ef-68dd-80e4-ba06-d1a25310c4b3" class=""><mark class="highlight-teal">UX/UI</mark></h2><p id="1c48d3ef-68dd-80be-b50e-d46508fae797" class="">A interface de usuário do jogo é projetada para fornecer uma experiência intuitiva e funcional, focado em facilitar a gestão de recursos e a sobrevivência do jogador. Aqui estão os principais elementos da interface:</p><p id="1c48d3ef-68dd-809e-a2dd-cb1be94c4df0" class="">
+</p><p id="1c48d3ef-68dd-80d4-b098-d8ddb2e6c628" class=""><strong>Painel de Status do Personagem</strong>: Uma pequena área que exibe informações sobre a saúde, energia e status do personagem, essencial para monitorar a condição durante combates ou exploração.</p><figure id="1c48d3ef-68dd-80cf-a806-f42e517d1d62" class="image" style="text-align:left"><a href="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcPiI8vN5157_KIPzIktQnLxa8iC_rZ97x-paCxkdG823Ik45_dCC425MATYPWMFsB6fEkkLTagBEzoBbF5z5KIkcU7fAOKuKL0heYgch671SUWmxC4ok6p3gS52vbjSxPxf_MwmPkXc9ueNhSV2ND3a4tt?key=N0b95GFWVycP6F0zxcgeNw"><img style="width:336px" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcPiI8vN5157_KIPzIktQnLxa8iC_rZ97x-paCxkdG823Ik45_dCC425MATYPWMFsB6fEkkLTagBEzoBbF5z5KIkcU7fAOKuKL0heYgch671SUWmxC4ok6p3gS52vbjSxPxf_MwmPkXc9ueNhSV2ND3a4tt?key=N0b95GFWVycP6F0zxcgeNw"/></a></figure><p id="1c48d3ef-68dd-8088-9af1-d061595165cf" class=""><strong>Seção de Construção e Defesas</strong>: Geralmente acessível por um menu lateral ou inferior, essa área permite que o jogador escolha construções, melhorias e defesas. Cada construção é representada por um ícone, com detalhes sobre os recursos necessários.</p><figure id="1c48d3ef-68dd-8000-b2ce-c1bfe8b3b9ec" class="image" style="text-align:left"><a href="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfR_mPtmBtEy7v5xEUK9O-5O3AsDzpJuzwD5DGuQmV0mRF_7-CRnUVWUXKDM1LpSkwp8WJJxyh76FG69R2v6sq9PlrinZzZvrijJW9CpcmfYePHZlEQMS8ImInfac19_yFT66O5z_EfW7JMXZJD-Y9LZFl5?key=N0b95GFWVycP6F0zxcgeNw"><img style="width:336px" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfR_mPtmBtEy7v5xEUK9O-5O3AsDzpJuzwD5DGuQmV0mRF_7-CRnUVWUXKDM1LpSkwp8WJJxyh76FG69R2v6sq9PlrinZzZvrijJW9CpcmfYePHZlEQMS8ImInfac19_yFT66O5z_EfW7JMXZJD-Y9LZFl5?key=N0b95GFWVycP6F0zxcgeNw"/></a></figure><p id="1c48d3ef-68dd-801f-885c-c7d9b2552cf5" class=""><strong>Indicador de Ciclo Dia/Noite</strong>: Uma barra de progresso que mostra o tempo restante no ciclo atual. Durante o dia, a barra exibe quanto tempo falta até o próximo ataque de zumbis à noite, permitindo ao jogador planejar suas ações.</p><figure id="1c48d3ef-68dd-80e3-af2e-df17ee001f62" class="image" style="text-align:left"><a href="https://lh7-rt.googleusercontent.com/docsz/AD_4nXedYM8DvZsp31s8PlAbrnlQUR5e6jzq7TCVbJi8dogaWESb9fyYVXCXmNQOh1VccbcVBZidV4_Sh9Ga9ZbM9hBAIkVFWp8ZDVDjcVeFyZay0MEG35P2Cta5gk5HoCc5a3KZ5NL0nw7Sqyfpiib8Wam01kEk?key=N0b95GFWVycP6F0zxcgeNw"><img style="width:192px" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXedYM8DvZsp31s8PlAbrnlQUR5e6jzq7TCVbJi8dogaWESb9fyYVXCXmNQOh1VccbcVBZidV4_Sh9Ga9ZbM9hBAIkVFWp8ZDVDjcVeFyZay0MEG35P2Cta5gk5HoCc5a3KZ5NL0nw7Sqyfpiib8Wam01kEk?key=N0b95GFWVycP6F0zxcgeNw"/></a></figure><p id="1c48d3ef-68dd-80c2-9794-d9deca58d7ae" class=""><strong>Barra de Recursos</strong>: Localizada no canto da tela, exibe os recursos coletados, como materiais, minerais, e energia. Essa barra ajuda o jogador a monitorar a quantidade disponível de cada item essencial para a construção e defesa. (Talvez)</p><figure id="1c48d3ef-68dd-8020-bfd0-f603b327c439" class="image" style="text-align:left"><a href="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfFgRk7ICQYT53wlI7ltrJQseDPWEGH-lfqtB_Ff08FrLO_SHRRcU7BxChwXm6S98IJxERxWjlzSEC81YL3rg00UtUU0dek6kN3udSjwDA0jqsEdkIVfETMK0zZJevOYo0oRM_tMUTkgsAEkIhQjwjhCrc?key=N0b95GFWVycP6F0zxcgeNw"><img style="width:240px" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfFgRk7ICQYT53wlI7ltrJQseDPWEGH-lfqtB_Ff08FrLO_SHRRcU7BxChwXm6S98IJxERxWjlzSEC81YL3rg00UtUU0dek6kN3udSjwDA0jqsEdkIVfETMK0zZJevOYo0oRM_tMUTkgsAEkIhQjwjhCrc?key=N0b95GFWVycP6F0zxcgeNw"/></a></figure><p id="1c48d3ef-68dd-800e-8499-e9857226e893" class=""><strong>Mensagens de Missão e Dicas</strong>: Notificações ou pop-ups aparecem no canto da tela, fornecendo atualizações sobre objetivos de missões, dicas de jogabilidade ou alertas sobre ataques iminentes.</p><figure id="1c48d3ef-68dd-8059-93c5-d98ed81a59f9" class="image" style="text-align:left"><a href="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf2gBsR8qht8cI1eSWVomnmHFx98SFE-JixpaWAQzLs3YeuKtM-aBAv4rOCZmsyRDxZxvXXE8WkAU6KSZf6ZB-AWu6X5hqau6zOlvyCv3TmtwTHhQB8hrWLWPsEjDNcis6R2sfFmrR9u6JOqbox0Ajk6mE?key=N0b95GFWVycP6F0zxcgeNw"><img style="width:384px" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf2gBsR8qht8cI1eSWVomnmHFx98SFE-JixpaWAQzLs3YeuKtM-aBAv4rOCZmsyRDxZxvXXE8WkAU6KSZf6ZB-AWu6X5hqau6zOlvyCv3TmtwTHhQB8hrWLWPsEjDNcis6R2sfFmrR9u6JOqbox0Ajk6mE?key=N0b95GFWVycP6F0zxcgeNw"/></a></figure><p id="1c48d3ef-68dd-806f-8e63-c94daba09ac1" class=""><strong>Loja</strong>: A loja é definida por totens próximos ao comerciante onde podem ser comprados itens, armas e recursos adicionais.</p><figure id="1c48d3ef-68dd-801d-ae00-cda50c4f1cfa" class="image" style="text-align:left"><a href="image%207.png"><img style="width:384px" src="image%207.png"/></a></figure><p id="1c48d3ef-68dd-8064-a6b2-dba0843023ad" class="">Essa combinação de elementos cria uma interface eficiente, permitindo ao jogador gerenciar sua fábrica e preparar-se para as batalhas sem perder a imersão no jogo.</p><h2 id="1c48d3ef-68dd-80c0-86ed-f03557ccacfd" class=""><mark class="highlight-teal">Fluxo de Telas</mark></h2><figure id="1c48d3ef-68dd-807e-b968-ce237f097b04" class="image" style="text-align:left"><a href="image%208.png"><img style="width:576px" src="image%208.png"/></a></figure><p id="1c28d3ef-68dd-80a4-a709-f920ac145fdf" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,9 @@
+﻿Nome,Vida Máxima,Dano,Cadência,Alcance,Tipo de Projetil
+Torre Comum,1500,20,20,100,Normal
+Torre de Gelo,2500,10,10,50,Congelante
+Torre Explosiva,2000,30,5,75,Explosivo
+Torre de Raio,1250,5,30,75,Raio
+Torre de Fogo,1750,30,15,100,Fogo
+"Torre de Lazer ",1000,5,40,75,Lazer
+Torre Atordoante (empurra),2000,20,10,75,Atordoante
+Torre Suporte,1800,0,20,80,Bonus
